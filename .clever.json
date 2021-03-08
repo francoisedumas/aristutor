@@ -1,0 +1,11 @@
+{
+  "apps": [
+    {
+      "app_id": "app_25e0e7f6-efe9-4c30-acd5-2fa7a22de20b",
+      "org_id": "user_59dbfd78-a11c-4f16-b65e-69f58b7887f4",
+      "deploy_url": "https://push-par-clevercloud-customers.services.clever-cloud.com/app_25e0e7f6-efe9-4c30-acd5-2fa7a22de20b.git",
+      "name": "aristutor",
+      "alias": "aristutor"
+    }
+  ]
+}
