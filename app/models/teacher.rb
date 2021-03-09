@@ -3,9 +3,10 @@ class Teacher < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   has_many :teacher_languages
   has_many :courses
+  has_many :students, through: :courses
   has_one_attached :photo
 
-  validates :first_name, :last_name, : presence: true
+  validates :first_name, :last_name, presence: true
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
