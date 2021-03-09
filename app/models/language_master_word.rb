@@ -1,2 +1,0 @@
-class LanguageMasterWord < ApplicationRecord
-end

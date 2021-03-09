@@ -7,7 +7,7 @@ class DeviseCreateStudents < ActiveRecord::Migration[6.0]
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
 
-      ## teacher information
+      ## student information
       t.string :first_name
       t.string :last_name
       t.string :phone_number
