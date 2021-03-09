@@ -5,7 +5,7 @@ class Teacher < ApplicationRecord
   has_many :courses
   has_one_attached :photo
 
-  validates :first_name, :last_name, : presence: true
+  validates :first_name, :last_name, presence: true
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable

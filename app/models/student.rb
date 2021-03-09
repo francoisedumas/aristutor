@@ -6,8 +6,8 @@ class Student < ApplicationRecord
   has_many :courses
   has_one_attached :photo
 
-  validates :first_name, :last_name, :phone_number, :mother_language, :presence true
-  validates :phone_number, :uniqueness true
+  validates :first_name, :last_name, :phone_number, :mother_language, presence: true
+  validates :phone_number, uniqueness: true
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
