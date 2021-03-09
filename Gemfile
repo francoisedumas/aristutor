@@ -38,6 +38,7 @@ gem 'simple_form'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 gem 'devise'
+gem 'cloudinary', '~> 1.16.0'
 
 group :development, :test do
   gem 'pry-byebug'
