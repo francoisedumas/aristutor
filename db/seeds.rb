@@ -104,3 +104,4 @@ mistake_6 = Mistake.create!(wrong_content: "valley of death" , correct_content: 
 mistake_7 = Mistake.create!(wrong_content: "doctor" , correct_content: "physician" , status: "passed", summary: summary_7)
 mistake_8 = Mistake.create!(wrong_content: "tornad" , correct_content: "tornado" , status: "failed", summary: summary_8)
 puts "Mistakes well generated"
+
