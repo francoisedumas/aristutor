@@ -16,4 +16,8 @@
 <%= link_to "Add new summary",  new_course_summary_path(@course), class: "btn btn-primary" %>
 <p>Add summaries cards</p>
 <p>In each summary card add status</p>
-
+<% @summaries.each do |summary|%>
+  <%= summary.title.capitalize!%>
+  <%= summary.created_at.strftime("%d %b %Y") %>
+  <br>
+<% end %>

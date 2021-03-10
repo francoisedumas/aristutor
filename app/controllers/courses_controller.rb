@@ -29,5 +29,7 @@ class CoursesController < ApplicationController
     total_summary_done = @course.done_summaries.size
 
     @completion = (total_summary_done * 1.00 / @number_of_summary * 100).to_i
+
+    @summaries = @course.summaries
   end
 end
