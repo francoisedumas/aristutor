@@ -6,11 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 puts "Cleaning Database"
+Summary.destroy_all
+Course.destroy_all
+TeacherLanguage.destroy_all
 Teacher.destroy_all
 Student.destroy_all
-TeacherLanguage.destroy_all
-Course.destroy_all
-Summary.destroy_all
 puts "Database cleaned"
 
 puts "Generate teacher seeds"
