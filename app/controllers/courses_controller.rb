@@ -25,6 +25,10 @@ class CoursesController < ApplicationController
     # Sending the summary
     @number_of_summary = @course.summaries.count
 
+    def new 
+      @course = Course.new
+    end
+
 
   end
 end
