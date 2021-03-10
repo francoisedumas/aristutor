@@ -1,6 +1,5 @@
-<h1>My courses</h1>
+<h2>All students</h2>
 
-<h2>search bar</h2>
 <%= form_tag courses_path, method: :get do %>
   <%= text_field_tag :query,
     params[:query],
@@ -10,7 +9,8 @@
   <%= submit_tag "Search", class: "btn btn-primary" %>
 <% end %>
 
-<h2>All students</h2>
+<%= link_to "add", new_course_path, class: "btn btn-primary"%>
+<br>
 
 <% @courses.each do |course|%>
   <% if course.student.photo.attached? %>
@@ -20,4 +20,8 @@
   <% end %>
   <p><%= course.student.first_name %></p>
   <p><%= course.student.last_name %></p>
+  <p>Summary#<%= course.summaries.count %></p>
+  <p><%= course.summaries.last.title.capitalize!%></p>
+  <%= link_to "course", course_path(course), class: "btn btn-primary" %>
+  <br>
 <% end %>
