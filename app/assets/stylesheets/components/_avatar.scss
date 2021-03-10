@@ -1,6 +1,6 @@
-// ---------- Little avatar on card ----------
+// ---------- Small avatar for student card ----------
 
-.avatar {
+.small-avatar {
   width: 80px;
   height: 80px;
   object-fit: cover;
@@ -8,4 +8,12 @@
   box-shadow: $text-shadow;
 }
 
-// ---------- Big avatar on profile ----------
+// ---------- Large avatar for student profile ----------
+
+.large-avatar {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: $text-shadow;
+}
