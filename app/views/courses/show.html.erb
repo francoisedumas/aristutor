@@ -1,21 +1,54 @@
+<div class="main-wrapper">
 
-<%= link_to "Back to students", courses_path, class: "btn btn-primary" %>
-<%= link_to "Edit students", edit_course_path, class: "btn btn-warning" %>
-<p><%= @course.student.first_name %></p>
-<p><%= @course.student.last_name %></p>
-<% if @course.student.photo.attached? %>
-    <%= cl_image_tag @course.student.photo.key %>
-  <% else %>
-    <p>Missing image</p>
-<% end %>
-<p> <%= @class_language_name %> student - Bali</p>
-<p> <%= @number_of_summary %> summaries</p>
-<!-- here we use a helper number_to_percentage inherited from ActionView to show as % -->
-<p><%= number_to_percentage(@completion, precision: 0) %> </p>
-<%= link_to "Add new summary",  new_course_summary_path(@course), class: "btn btn-primary" %>
+  <div class="d-flex justify-content-between flex-wrap">
+    <%= link_to courses_path, class: "btn btn-small txt-grey", method: :get do %>
+      <i class="fas fa-chevron-left"></i>
+    <% end %>
+    <h2><%= @course.student.first_name %> <%= @course.student.last_name %></h2>
 
-<% @summaries.each do |summary|%>
-  <%= summary.title.capitalize!%>
-  <%= summary.created_at.strftime("%d %b %Y") %>
-  <br>
-<% end %>
+    <%= link_to edit_course_path, class: "btn btn-small txt-orange", method: :get do %>
+      <i class="fas fa-plus"></i>
+    <% end %>
+  </div>
+
+  <% if @course.student.photo.attached? %>
+      <%= cl_image_tag @course.student.photo.key, class: "avatar" %>
+    <% else %>
+      <p>Missing image</p>
+  <% end %>
+
+  <h2 class="hp-subtitle"><%= @class_language_name %> student - Bali</h2>
+  <div class="d-flex justify-content-between flex-wrap">
+    <div class="card-student-name">
+      <h2 class="hp-subtitle">Summaries</h2>
+      <h1> <%= @number_of_summary %></h1>
+    </div>
+    <div class="card-student-name">
+      <h2 class="hp-subtitle">Completion</h2>
+      <!-- here we use a helper number_to_percentage inherited from ActionView to show as % -->
+      <h1> <%= number_to_percentage(@completion, precision: 0) %> </h1>
+    </div>
+  </div>
+
+  <div class="card-summary-add">
+      <div class="card-summary-add-infos">
+        <p class="summary">Add a new summary</p>
+      </div>
+      <%= link_to new_course_summary_path(@course), class: "btn btn-small txt-orange", method: :get do %>
+        <i class="fas fa-plus"></i>
+      <% end %>
+  </div>
+
+  <% @summaries.each do |summary|%>
+    <div class="card-summary">
+      <div class="card-summary-infos">
+        <p class="summary"><%= summary.title.capitalize!%></p>
+        <p class="flashcard">Flashcard #8</p>
+        <p class="date"><%= summary.created_at.strftime("%d-%m-%Y") %></p>
+      </div>
+      <button class="btn btn-small btn-inset txt-grey">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+  <% end %>
+</div>
