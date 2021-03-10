@@ -12,6 +12,9 @@
 
 <h2>All students</h2>
 
+<%= link_to "add", new_course_path, class: "btn btn-primary"%>
+<br>
+
 <% @courses.each do |course|%>
   <% if course.student.photo.attached? %>
     <%= cl_image_tag course.student.photo.key %>
@@ -20,4 +23,8 @@
   <% end %>
   <p><%= course.student.first_name %></p>
   <p><%= course.student.last_name %></p>
+  <p>Flashcard#<%= course.summaries.count %></p>
+  <p><%= course.summaries.last.title.capitalize!%></p>
+  <%= link_to "course", course_path(course), class: "btn btn-primary" %>
+  <br>
 <% end %>
