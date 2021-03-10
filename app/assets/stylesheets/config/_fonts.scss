@@ -1,20 +1,26 @@
 // 1. Import Google fonts
+
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 
 // 2. Define fonts for body and headers
+
 $body-font: "Inter", "Helvetica", "sans-serif";
 $headers-font: "Inter", "Helvetica", "sans-serif";
 
-// 3. Define fonts/colors for selectors
+// 3. Copy/paste from _boostrap.scss (before delete the boostrap file)
+
+$font-family-sans-serif: $body-font;
+$headings-font-family: $headers-font;
+$font-size-base: 1rem;
+
+// 4. Define fonts/colors for selectors
 
 // ---------- Homepage ----------
-
 h1 {
   font-size: 32px;
   font-weight: 700;
   color: $dark-orange;
 }
-
 .hp-subtitle {
   font-size: 20px;
   font-weight: 400;
@@ -22,13 +28,11 @@ h1 {
 }
 
 // ---------- Teacher pages ----------
-
 h2 {
-  font-size: 16px;
+  font-size: 16px !important;
   font-weight: 700;
   color: $dark-grey;
 }
-
 p {
   font-size: 12px;
   font-weight: 400;
@@ -36,7 +40,6 @@ p {
 }
 
 // ---------- Student pages (flashcard) ----------
-
 .flashcard-p {
   font-size: 20px;
   font-weight: 400;
