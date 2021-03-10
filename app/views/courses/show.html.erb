@@ -1,1 +1,17 @@
 <h1>Class exp</h1>
+
+<%= link_to "Back to students", courses_path, class: "btn btn-primary" %>
+<%= link_to "Edit students", edit_course_path, class: "btn btn-warning" %>
+<p><%= @course.student.first_name %></p>
+<p><%= @course.student.last_name %></p>
+<% if @course.student.photo.attached? %>
+    <%= cl_image_tag @course.student.photo.key %>
+  <% else %>
+    <p>Missing image</p>
+<% end %>
+<p> <%= @class_language_name %> student - Bali</p>
+<p> <%= @number_of_summary %> summaries</p>
+<p>Add % of completion</p>
+<p>Add a new summary button</p>
+<p>Add summaries cards</p>
+<p>In each summary card add status</p>

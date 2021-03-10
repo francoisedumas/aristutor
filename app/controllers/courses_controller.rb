@@ -6,4 +6,25 @@ class CoursesController < ApplicationController
       @courses = Course.where("teacher_id = ?", current_teacher.id)
     end
   end
+
+  def show
+    # Sending object course
+    @course = Course.find(params[:id])
+
+    # Sending the class language
+    if @course.class_language == "EN"
+      @class_language_name = "English"
+    elsif @course.class_language == "FR"
+      @class_language_name = "French"
+    elsif @course.class_language == "SP"
+      @class_language_name = "Spanish"
+    elsif @course.class_language == "PT"
+      @class_language_name = "Portuguese"
+    end
+
+    # Sending the summary
+    @number_of_summary = @course.summaries.count
+
+
+  end
 end
