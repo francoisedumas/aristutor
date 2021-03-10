@@ -14,4 +14,10 @@ class Course < ApplicationRecord
       tsearch: { prefix: true } # start returning something with first letters
     }
 
+  def done_summaries
+    summaries.select do |summary|
+      summary.status == "done"
+    end
+  end
+
 end
