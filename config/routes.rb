@@ -22,4 +22,7 @@ Rails.application.routes.draw do
       # aristutor.co/summaries/54/send
      end
   end
+
+  get '/components', to: 'pages#components'
+  
 end

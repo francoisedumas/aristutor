@@ -1,19 +1,70 @@
-// ---------- Buttons ----------
+// -------------------- Buttons --------------------
 
 .btn {
   font-size: 14px;
   font-weight: 700;
-  padding: 12px 24px;
+  padding: 16px 0px;
+  width: 150px;
+  text-align: center;
+  border-radius: 50px;
+  box-shadow: $white-shadow;
+  i {
+    font-size: 10px;
+  }
 }
+
+.btn-large {
+  width: 95%;
+}
+
+.btn-small {
+  height: 26px;
+  width: 26px;
+  text-align: center;
+  border-radius: 50px;
+  box-shadow: $white-shadow;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.btn-inset {
+  box-shadow: $inset-shadow;
+}
+
+// -------------------- Wording --------------------
 
 .txt-orange {
   color: $primary-orange;
+  background-color: $background-grey;
+  &:hover,
+  &:active,
+  &:focus {
+    color: $dark-orange;
+    box-shadow: $white-shadow;
+  }
 }
 
 .txt-grey {
   color: $grey;
+  background-color: $background-grey;
+  &:hover,
+  &:active,
+  &:focus {
+    color: $dark-grey;
+    box-shadow: $white-shadow;
+  }
 }
 
 .txt-white {
   color: white;
+  background-color: $primary-orange;
+  &:hover,
+  &:active,
+  &:focus {
+    color: white;
+    background-color: $dark-orange;
+    box-shadow: $white-shadow;
+  }
 }
