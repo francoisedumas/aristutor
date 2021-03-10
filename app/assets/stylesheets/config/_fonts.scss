@@ -1,22 +1,44 @@
-// Import Google fonts
+// 1. Import Google fonts
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 
-// Define fonts for body and headers
+// 2. Define fonts for body and headers
 $body-font: "Inter", "Helvetica", "sans-serif";
 $headers-font: "Inter", "Helvetica", "sans-serif";
 
-// Define fonts/colors for selectors
+// 3. Define fonts/colors for selectors
+
+// ---------- Homepage ----------
+
 h1 {
-  // font-size
+  font-size: 32px;
+  font-weight: 700;
   color: $dark-orange;
 }
 
+.hp-subtitle {
+  font-size: 20px;
+  font-weight: 400;
+  color: $grey;
+}
+
+// ---------- Teacher pages ----------
+
 h2 {
-  // font-size
+  font-size: 16px;
+  font-weight: 700;
   color: $dark-grey;
 }
 
 p {
-  // font-size
+  font-size: 12px;
+  font-weight: 400;
+  color: $grey;
+}
+
+// ---------- Student pages (flashcard) ----------
+
+.flashcard-p {
+  font-size: 20px;
+  font-weight: 400;
   color: $grey;
 }
