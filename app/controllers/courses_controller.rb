@@ -30,6 +30,11 @@ class CoursesController < ApplicationController
 
     @completion = (total_summary_done * 1.00 / @number_of_summary * 100).to_i
 
+
     @summaries = @course.summaries
+  end
+  
+  def new 
+    @course = Course.new
   end
 end
