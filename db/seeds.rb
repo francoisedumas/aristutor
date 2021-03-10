@@ -84,14 +84,15 @@ puts "Courses well generated"
 
 puts "Generate Summaries seeds"
 
-summary_1 = Summary.create!(title: "vehicles", course: course_john_sophie, sent: false)
-summary_2 = Summary.create!(title: "pets", course: course_john_arnaud, sent: false)
-summary_3 = Summary.create!(title: "food", course: course_brice_pedro, sent: false)
-summary_4 = Summary.create!(title: "travels", course: course_brice_kate, sent: false)
-summary_5 = Summary.create!(title: "colors", course: course_brice_jerome, sent: false)
-summary_6 = Summary.create!(title: "geography", course: course_brice_jaime, sent: false)
-summary_7 = Summary.create!(title: "jobs", course: course_brice_juan, sent: false)
-summary_8 = Summary.create!(title: "weather", course: course_brice_michele, sent: false)
+summary_1 = Summary.create!(title: "vehicles", course: course_john_sophie)
+summary_2 = Summary.create!(title: "pets", course: course_john_arnaud)
+summary_3 = Summary.create!(title: "food", course: course_brice_pedro)
+summary_4 = Summary.create!(title: "travels", course: course_brice_kate)
+summary_5 = Summary.create!(title: "colors", course: course_brice_jerome)
+summary_6 = Summary.create!(title: "geography", course: course_brice_jaime)
+summary_7 = Summary.create!(title: "jobs", course: course_brice_juan)
+summary_8 = Summary.create!(title: "weather", course: course_brice_michele)
+summary_9 = Summary.create!(title: "pets", course: course_john_sophie)
 puts "Summaries well generated"
 
 puts "Generate Mistakes seeds"
@@ -116,6 +117,9 @@ mistake_11 = Mistake.create!(wrong_content: "valley of death" , correct_content:
 mistake_12 = Mistake.create!(wrong_content: "haircutter" , correct_content: "hairdresser" , status: "failed", summary: summary_7)
 
 mistake_13 = Mistake.create!(wrong_content: "tornad" , correct_content: "tornado" , status: "failed", summary: summary_8)
+
+mistake_14 = Mistake.create!(wrong_content: "the butterfly are flying" , correct_content: "the butterflies are flying" , status: "created", summary: summary_9)
+mistake_15 = Mistake.create!(wrong_content: "the dog blue" , correct_content: "the blue dog" , status: "created", summary: summary_9)
 
 puts "Mistakes well generated"
 

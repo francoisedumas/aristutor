@@ -24,11 +24,17 @@ class CoursesController < ApplicationController
 
     # Sending the summary
     @number_of_summary = @course.summaries.count
+    # This enables to get number of summaries done
+    # but investigate with a join query (to avoid N+1 query)
+    total_summary_done = @course.done_summaries.size
 
-    def new 
-      @course = Course.new
-    end
+    @completion = (total_summary_done * 1.00 / @number_of_summary * 100).to_i
 
 
+    @summaries = @course.summaries
+  end
+  
+  def new 
+    @course = Course.new
   end
 end

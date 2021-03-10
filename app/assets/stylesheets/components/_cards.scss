@@ -1,25 +1,94 @@
 // ---------- Student cards ----------
 
-// .card-student {
-//   .theme-summary {
-//     font-size: 12px;
-//     font-weight: 600;
-//     color: $dark-grey;
-//   }
-// }
+.card-student {
+  margin: 12px 0px;
+  width: 47%;
+  padding: 20px;
+  background-color: $medium-grey;
+  box-shadow: $white-shadow;
+  border-radius: 8px;
 
-// .p-student-firstname {
-//   font-size: 12px;
-//   font-weight: 500;
-//   letter-spacing: 0.2em;
-//   color: $grey;
-// }
+  p {
+    margin: 0;
+  }
 
-// .p-student-lastname {
-//   font-size: 16px;
-//   font-weight: 700;
-//   letter-spacing: 0.13em;
-//   color: $dark-grey;
-// }
+  &-name {
+    margin: 12px 0;
+
+    .firstname {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      color: $grey;
+      text-transform: uppercase;
+    }
+
+    .lastname {
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      color: $dark-grey;
+      text-transform: uppercase;
+      margin-top: -5px;
+    }
+  }
+
+  &-infos {
+    .summary {
+      font-weight: 600;
+      color: $dark-grey;
+    }
+  }
+}
 
 // ---------- Summary cards ----------
+
+.card-summary {
+  margin: 12px 0px;
+  width: 100%;
+  padding: 20px;
+  background-color: $medium-grey;
+  box-shadow: $white-shadow;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+
+  p {
+    margin: 0;
+  }
+
+  &-infos {
+    .summary {
+      font-weight: 600;
+      color: $dark-grey;
+    }
+  }
+}
+
+// ---------- Add summary cards ----------
+
+.card-summary-add {
+  margin: 12px 0px;
+  width: 100%;
+  padding: 20px;
+  background-color: $primary-orange;
+  box-shadow: $white-shadow;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+
+  p {
+    margin: 0;
+  }
+
+  &-infos {
+    .summary {
+      font-weight: 700;
+      color: white;
+    }
+  }
+}
