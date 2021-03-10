@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 puts "Cleaning Database"
+Mistake.destroy_all
 Summary.destroy_all
 Course.destroy_all
 TeacherLanguage.destroy_all
@@ -95,13 +96,26 @@ puts "Summaries well generated"
 
 puts "Generate Mistakes seeds"
 
-mistake_1 = Mistake.create!(wrong_content: "a truc" , correct_content: "a truk" , status: "created", summary: summary_1)
-mistake_2 = Mistake.create!(wrong_content: "the dog red" , correct_content: "the red dog" , status: "created", summary: summary_2)
-mistake_3 = Mistake.create!(wrong_content: "the fish big" , correct_content: "the big fish" , status: "created", summary: summary_3)
-mistake_4 = Mistake.create!(wrong_content: "the tower eiffel" , correct_content: "the eiffel tower" , status: "created", summary: summary_4)
-mistake_5 = Mistake.create!(wrong_content: "yello" , correct_content: "yellow" , status: "created", summary: summary_5)
-mistake_6 = Mistake.create!(wrong_content: "valley of death" , correct_content: "death valley" , status: "passed", summary: summary_6)
-mistake_7 = Mistake.create!(wrong_content: "doctor" , correct_content: "physician" , status: "passed", summary: summary_7)
-mistake_8 = Mistake.create!(wrong_content: "tornad" , correct_content: "tornado" , status: "failed", summary: summary_8)
+mistake_1 = Mistake.create!(wrong_content: "car police" , correct_content: "police car" , status: "created", summary: summary_1)
+mistake_2 = Mistake.create!(wrong_content: "the car red" , correct_content: "the red car" , status: "created", summary: summary_1)
+mistake_3 = Mistake.create!(wrong_content: "truck delivery" , correct_content: "delivery truck" , status: "created", summary: summary_1)
+mistake_4 = Mistake.create!(wrong_content: "a taxi yellow" , correct_content: "a yellow taxi" , status: "created", summary: summary_1)
+
+mistake_5 = Mistake.create!(wrong_content: "the butterfly are flying" , correct_content: "the butterflies are flying" , status: "created", summary: summary_2)
+mistake_6 = Mistake.create!(wrong_content: "the dog blue" , correct_content: "the blue dog" , status: "created", summary: summary_2)
+
+mistake_7 = Mistake.create!(wrong_content: "fries french" , correct_content: "french fries" , status: "passed", summary: summary_3)
+
+mistake_8 = Mistake.create!(wrong_content: "tower eiffel" , correct_content: "eiffel tower" , status: "failed", summary: summary_4)
+
+mistake_9 = Mistake.create!(wrong_content: "yelow" , correct_content: "yellow" , status: "failed", summary: summary_5)
+
+mistake_10 = Mistake.create!(wrong_content: "the ocean pacific" , correct_content: "the pacific ocean" , status: "failed", summary: summary_6)
+mistake_11 = Mistake.create!(wrong_content: "valley of death" , correct_content: "death valley" , status: "failed", summary: summary_6)
+
+mistake_12 = Mistake.create!(wrong_content: "haircutter" , correct_content: "hairdresser" , status: "failed", summary: summary_7)
+
+mistake_13 = Mistake.create!(wrong_content: "tornad" , correct_content: "tornado" , status: "failed", summary: summary_8)
+
 puts "Mistakes well generated"
 
