@@ -11,9 +11,8 @@ class CoursesController < ApplicationController
     # Sending object course
     @course = Course.find(params[:id])
 
-    # @course = Course.includes(:summary)
-    # @course = Course.where("course.id = ?", params[:id])
-    # @course = Course.where("course.id = ?", params[:id]).includes(:summaries)
+    # Loading the summaries from the given course
+    @summaries = Summary.includes(:course).where(course_id: params[:id]).order('created_at DESC')
 
     # Sending the class language
     if @course.class_language == "EN"
@@ -33,8 +32,6 @@ class CoursesController < ApplicationController
     total_summary_done = @course.done_summaries.size
 
     @completion = (total_summary_done * 1.00 / @number_of_summary * 100).to_i
-
-    @summaries = @course.summaries.order('created_at DESC')
   end
 
   def new
