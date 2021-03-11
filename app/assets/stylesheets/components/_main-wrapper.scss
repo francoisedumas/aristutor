@@ -1,3 +1,5 @@
+// Grey main wrapper up to the orange background
+
 .main-wrapper {
   width: calc(100vw - 8px);
   background-color: $background-grey;
@@ -6,5 +8,5 @@
   text-align: center;
   margin-top: 24px;
   border-radius: 50px 50px 0 0;
-  margin-bottom: 48px;
+  margin-bottom: 100px;
 }
