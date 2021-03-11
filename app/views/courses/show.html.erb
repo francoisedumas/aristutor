@@ -7,7 +7,7 @@
     <h2><%= @course.student.first_name %> <%= @course.student.last_name %></h2>
 
     <%= link_to edit_course_path, class: "btn btn-small txt-orange", method: :get do %>
-      <i class="fas fa-plus"></i>
+      <i class="fas fa-pen"></i>
     <% end %>
   </div>
 
@@ -34,7 +34,7 @@
       <div class="card-summary-add-infos">
         <p class="summary">Add a new summary</p>
       </div>
-      <%= link_to new_course_summary_path(@course), class: "btn btn-small txt-orange", method: :get do %>
+      <%= link_to course_summaries_path(@course), class: "btn btn-small txt-orange", method: :post do %>
         <i class="fas fa-plus"></i>
       <% end %>
   </div>
