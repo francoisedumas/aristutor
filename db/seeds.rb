@@ -93,6 +93,7 @@ summary_6 = Summary.create!(title: "geography", course: course_brice_jaime)
 summary_7 = Summary.create!(title: "jobs", course: course_brice_juan)
 summary_8 = Summary.create!(title: "weather", course: course_brice_michele)
 summary_9 = Summary.create!(title: "pets", course: course_john_sophie)
+summary_10 = Summary.create!(title: "food", course: course_john_sophie, status: "done")
 puts "Summaries well generated"
 
 puts "Generate Mistakes seeds"
@@ -120,6 +121,8 @@ mistake_13 = Mistake.create!(wrong_content: "tornad" , correct_content: "tornado
 
 mistake_14 = Mistake.create!(wrong_content: "the butterfly are flying" , correct_content: "the butterflies are flying" , status: "created", summary: summary_9)
 mistake_15 = Mistake.create!(wrong_content: "the dog blue" , correct_content: "the blue dog" , status: "created", summary: summary_9)
+
+mistake_16 = Mistake.create!(wrong_content: "fries french" , correct_content: "french fries" , status: "passed", summary: summary_10)
 
 puts "Mistakes well generated"
 

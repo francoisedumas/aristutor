@@ -11,6 +11,10 @@ class CoursesController < ApplicationController
     # Sending object course
     @course = Course.find(params[:id])
 
+    # @course = Course.includes(:summary)
+    # @course = Course.where("course.id = ?", params[:id])
+    # @course = Course.where("course.id = ?", params[:id]).includes(:summaries)
+
     # Sending the class language
     if @course.class_language == "EN"
       @class_language_name = "English"
@@ -30,11 +34,10 @@ class CoursesController < ApplicationController
 
     @completion = (total_summary_done * 1.00 / @number_of_summary * 100).to_i
 
-
-    @summaries = @course.summaries
+    @summaries = @course.summaries.order('created_at DESC')
   end
-  
-  def new 
+
+  def new
     @course = Course.new
   end
 end
