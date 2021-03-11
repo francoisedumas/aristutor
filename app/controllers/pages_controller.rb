@@ -5,4 +5,8 @@ class PagesController < ApplicationController
 
   def components
   end
+
+  def translation
+
+  end
 end

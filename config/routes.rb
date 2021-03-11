@@ -24,5 +24,5 @@ Rails.application.routes.draw do
   end
 
   get '/components', to: 'pages#components'
-  
+  get '/translation', to: 'pages#translation'
 end
