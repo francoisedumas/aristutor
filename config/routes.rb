@@ -10,8 +10,8 @@ Rails.application.routes.draw do
   resources :courses do
     resources :students, only: [:new, :create, :edit, :update]
     # aristutor.co/courses/students/42 here we are on student id:42
-    resources :summaries, only: [:new, :create]
-    # aristutor.co/courses/:courses_id/summary/new
+    resources :summaries, only: [:create, :edit, :update]
+    # aristutor.co/courses/:courses_id/summary/:id/edit
   end
 
   resources :summaries, only: [:index, :show, :edit, :update] do
