@@ -1,0 +1,17 @@
+<div class="main-wrapper">
+
+  <%= simple_form_for(@summary) do |f| %>
+    <%= f.input :title, placeholder: "Theme", label: false %>
+    <%= f.input :overview, placeholder: "Overview", label: false %>
+    <%= f.submit %>
+  <% end %>
+
+</div>
+
+<%# <div class="flex-components">
+  <input type="text" placeholder="Theme">
+  <input type="text" placeholder="Overview">
+  <input type="text" placeholder="Vocabulary box">
+  <input type="text" placeholder="Mistakes box">
+  <input type="date">
+</div> %>
