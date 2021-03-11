@@ -1,17 +1,23 @@
 <div class="main-wrapper">
-
+  <div class="nav">
+    <div></div>
     <h2>All students</h2>
+    <%= link_to new_course_path, class: "btn btn-small txt-white", method: :get do %>
+      <i class="fas fa-plus"></i>
+    <% end %>
+  </div>
 
-    <%= form_tag courses_path, method: :get do %>
+    <%= form_tag courses_path, method: :get, class:'form-search' do  %>
       <%= text_field_tag :query,
         params[:query],
-        class: "form-control",
         placeholder: "Find a student"
       %>
-      <%= submit_tag "Search", class: "btn btn-primary" %>
+      <%= button_tag :submit do %>
+        <i class="fas fa-search"></i>
+      <% end %>
+      <%#= submit_tag "O", class: "btn-search" %>
     <% end %>
 
-    <%= link_to "add", new_course_path, class: "btn btn-primary"%>
     <br>
 
   <div class="cards-students">
