@@ -12,17 +12,25 @@ Rails.application.routes.draw do
     # aristutor.co/courses/students/42 here we are on student id:42
     resources :summaries, only: [:new, :create]
     # aristutor.co/courses/:courses_id/summary/new
+
   end
 
   resources :summaries, only: [:index, :show, :edit, :update] do
     # aristutor.co/summaries/54 here we are on summary id:54
     # aristutor.co/summaries/55/edit here we are on summary id:55
     member do
-       patch :send
+      patch :send_summary # to be reviewed
       # aristutor.co/summaries/54/send
-     end
+    end
+    resource :flashcards, only: [:show] do
+      member do
+        patch :passed
+        patch :failed
+      end
+    end
+
   end
 
   get '/components', to: 'pages#components'
-  
+
 end
