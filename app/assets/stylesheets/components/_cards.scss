@@ -1,5 +1,11 @@
 // ---------- Student cards ----------
 
+.cards-students {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
 .card-student {
   margin: 12px 0px;
   width: 47%;

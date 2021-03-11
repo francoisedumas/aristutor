@@ -1,27 +1,39 @@
-<h2>All students</h2>
+<div class="main-wrapper">
 
-<%= form_tag courses_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find a student"
-  %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
+    <h2>All students</h2>
 
-<%= link_to "add", new_course_path, class: "btn btn-primary"%>
-<br>
+    <%= form_tag courses_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a student"
+      %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
 
-<% @courses.each do |course|%>
-  <% if course.student.photo.attached? %>
-    <%= cl_image_tag course.student.photo.key %>
-  <% else %>
-    <p>Missing image</p>
-  <% end %>
-  <p><%= course.student.first_name %></p>
-  <p><%= course.student.last_name %></p>
-  <p>Summary#<%= course.summaries.count %></p>
-  <p><%= course.summaries.last.title.capitalize!%></p>
-  <%= link_to "course", course_path(course), class: "btn btn-primary" %>
-  <br>
-<% end %>
+    <%= link_to "add", new_course_path, class: "btn btn-primary"%>
+    <br>
+
+  <div class="cards-students">
+    <% @courses.each do |course|%>
+      <%= link_to course_path(course), class: "card-student" do %>
+        <div>
+          <% if course.student.photo.attached? %>
+            <%= cl_image_tag course.student.photo.key, class:'small-avatar' %>
+          <% else %>
+            <p>Missing image</p>
+          <% end %>
+          <div class="card-student-name">
+            <p class="firstname"><%= course.student.first_name %></p>
+            <p class="lastname"><%= course.student.last_name %></p>
+          </div>
+          <div class="card-student-infos">
+            <p class="flashcard">Summary#<%= course.summaries.count %></p>
+            <p class="summary"><%= course.summaries.last.title.capitalize!%></p>
+            <%#= link_to "course", course_path(course), class: "btn btn-primary" %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
