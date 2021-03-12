@@ -1,1 +1,33 @@
-<h1>Test</h1>
+<div class="main-wrapper">
+
+  <%# Header %>
+  <div class="nav">
+    <%= link_to edit_summary_path, class: "btn btn-small txt-orange", method: :get do %>
+      <i class="fas fa-pen"></i>
+    <% end %>
+    <h2><%= @summary.title %></h2>
+    <div class="hide"></div>
+  </div>
+
+  <%# Body with overview, vocabulary box and mistakes box %>
+  <div class="card-summary">
+    <div class="card-summary-infos">
+      <p class="summary">Overview</p>
+      <p class="flashcard"><%= @summary.overview %></p>
+    </div>
+  </div>
+  <div class="card-summary">
+    <div class="card-summary-infos">
+      <p class="summary">Mistakes box</p>
+      <% @summary.mistakes.each do |mistake| %>
+        <p class="flashcard"><%= mistake.wrong_content %> => <%= mistake.correct_content %></p>
+      <% end %>
+    </div>
+  </div>
+
+  <%# Formulaire Button %>
+  <%= simple_form_for(@summary) do |f| %>
+    <%= f.submit 'Send the summary', class: 'btn btn-large txt-white' %>
+  <% end %>
+
+</div>

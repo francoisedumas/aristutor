@@ -1,17 +1,19 @@
 <div class="main-wrapper">
 
+<%# Header %>
+  <div class="nav">
+    <%= link_to :back, class: "btn btn-small txt-grey", method: :get do %>
+      <i class="fas fa-chevron-left"></i>
+    <% end %>
+    <h2>New summary</h2>
+    <div></div>
+  </div>
+
+<%# Formulaire %>
   <%= simple_form_for(@summary) do |f| %>
     <%= f.input :title, placeholder: "Theme", label: false %>
     <%= f.input :overview, placeholder: "Overview", label: false %>
-    <%= f.submit %>
+    <%= f.submit 'Save the summary', :class => 'btn btn-large txt-white' %>
   <% end %>
 
 </div>
-
-<%# <div class="flex-components">
-  <input type="text" placeholder="Theme">
-  <input type="text" placeholder="Overview">
-  <input type="text" placeholder="Vocabulary box">
-  <input type="text" placeholder="Mistakes box">
-  <input type="date">
-</div> %>
