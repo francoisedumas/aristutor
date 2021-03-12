@@ -14,6 +14,11 @@ input {
   color: $grey;
 }
 
+input:focus {
+  border:none;
+  outline:none;
+}
+
 ::-webkit-input-placeholder {
   color: $grey;
 }
@@ -37,4 +42,10 @@ input {
 }
 
 
+.teacher_remember_me {
+  display:none;
+}
 
+.form-actions {
+  text-align: center;
+}
