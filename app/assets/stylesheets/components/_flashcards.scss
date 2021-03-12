@@ -1,0 +1,35 @@
+.flashcard-wrapper {
+  input {
+    border-radius: 0px;
+    border-bottom: 1px solid $grey;
+    box-shadow: $text-shadow;
+  }
+  .flip-card {
+    position: absolute;
+    bottom: 90px;
+    left: 29%;
+  }
+}
+
+.bar {
+  margin: 0 auto;
+  width: 80%;
+  height: 6px;
+  border-radius: 0.5em;
+  background: lighten($grey, 15%);
+}
+
+.bar .percentage {
+  width: 30%;
+  background: $primary-orange;
+  height: 6px;
+  border-radius: 0.5em;
+}
+
+.current-flashcard {
+  font-size: 20px;
+}
+
+.counter-flashcard {
+  margin-bottom: 0px !important;
+}
