@@ -1,4 +1,21 @@
 <div class="p-5">
+  <p>Nombre de flashcard <%= @number_total %></p>
+  <p>Nombre de flashcard reussi <%= @number_total_passed %></p>
+  <h1><%= @summary.title %></h1>
+  <p>progress bar</p>
+
+  <% if @flashcard.is_a? Mistake %>
+      <p>Ecrivez correctement la phrase suivante</p>
+      <p><%= @flashcard.wrong_content %> </p>
+  <% elsif @flashcard.is_a? Word %>
+      <p>Quel est la traduction du mot suivant</p>
+      <p><%= @flashcard.word %> </p>
+  <% elsif @flashcard.nil? %>
+      <p>Well done</p>
+  <% end %>
+  <p><%= number_to_percentage(@completion, precision: 0) %></p>
+  <p>input form</p>
+  <p>button flip</p>
   <%= @flashcard.class %>
   <%= @flashcard.id %>
 </div>
