@@ -12,7 +12,14 @@
   padding-bottom: 100px;
 }
 
-// Flashcard wrapper
+
+.sign-wrapper {
+  width: calc(100vw - 8px);
+  padding: 20px;
+  margin: 0 auto;
+  background:$background-grey;
+  border-radius: 0 0 50px 50px;
+}
 
 .flashcard-wrapper {
   margin-top: 140px;
