@@ -33,10 +33,12 @@ class FlashcardsController < ApplicationController
     @number_total_passed = total_words_passed + total_mistakes_passed
 
     @completion = (@number_total_passed * 1.00 / @number_total * 100).to_i
+
   end
 
   def passed
     # if a student press passed button the status is updated
+
     @flashcard.update(status: 'passed')
 
     # student is redirected to the show of flashcard and get next one
