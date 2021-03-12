@@ -46,6 +46,7 @@ class FlashcardsController < ApplicationController
   end
 
   def failed
+    @flashcard.update(status: 'failed')
     # if a student press failed button we redirect to the show of flashcard
     # passing the params class (Word or Mistake) of the failed flashcard
     redirect_to flashcard_path(
