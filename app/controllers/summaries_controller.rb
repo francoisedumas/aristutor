@@ -1,11 +1,11 @@
 class SummariesController < ApplicationController
   def create
+    @summary = Summary.new()
     course = Course.find(params[:course_id])
-    @summary = Summary.new(course: course)
-    # Need to provide the current user in order to add an owner
-    # @summary.teacher = current_user
+    @summary.course = course
+
     if @summary.save
-      redirect_to edit_course_summary_path(course_id: @summary.course_id, id: @summary.id)
+      redirect_to edit_summary_path(@summary)
     else
       redirect_to course_path(course)
     end

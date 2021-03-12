@@ -42,7 +42,7 @@
   <% @summaries.each do |summary|%>
     <div class="card-summary">
       <div class="card-summary-infos">
-        <p class="summary"><%= summary.title.capitalize!%></p>
+        <p class="summary"><%= summary.title %></p>
         <p class="flashcard">Flashcard #8</p>
         <p class="date"><%= summary.created_at.strftime("%d-%m-%Y") %></p>
       </div>
