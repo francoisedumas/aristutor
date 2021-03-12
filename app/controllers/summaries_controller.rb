@@ -22,7 +22,7 @@ class SummariesController < ApplicationController
   end
 
   def show
-    
+    @summary = Summary.find(params[:id])
   end
 
   private
