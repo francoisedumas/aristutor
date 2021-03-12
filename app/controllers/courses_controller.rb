@@ -30,11 +30,31 @@ class CoursesController < ApplicationController
     # This enables to get number of summaries done
     # but investigate with a join query (to avoid N+1 query)
     total_summary_done = @course.done_summaries.size
-
-    @completion = (total_summary_done * 1.00 / @number_of_summary * 100).to_i
+    @completion = @number_of_summary.zero? ? 0 : (total_summary_done * 1.00 / @number_of_summary * 100).to_i
   end
 
   def new
     @course = Course.new
+    @student = Student.new
+  end
+
+  def create
+    @course = Course.new
+    @student = Student.invite!(student_params)
+    p @student
+    @course.student = @student
+    @course.teacher = current_teacher
+    p @course
+    if @course.save
+      redirect_to course_path(@course)
+    else 
+      render :new
+    end
+  end
+
+  private
+
+  def student_params
+    params.require(:student).permit(:first_name, :last_name, :phone_number, :mother_language, :email)
   end
 end
