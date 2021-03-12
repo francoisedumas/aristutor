@@ -1,9 +1,9 @@
 <%# Footer navbar on all teacher's screens %>
 
 <div class="navbar-footer">
-  <a class="navbar-footer-icon">
+  <%= link_to courses_path, class: "navbar-footer-icon" do %>
     <%= image_tag ('icon-student.svg') %>
-  </a>
+  <% end %>
   <a class="navbar-footer-icon">
     <%= image_tag ('icon-summary.svg') %>
   </a>
