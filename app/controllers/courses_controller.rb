@@ -36,5 +36,32 @@ class CoursesController < ApplicationController
 
   def new
     @course = Course.new
+    @student = Student.new
   end
+
+  def create
+    @course = Course.new
+    @student = Student.new(student_params)
+    p @student
+    if @student.save
+      p @student
+      @course.student = @student
+      @course.teacher = current_teacher
+      p @course
+      if @course.save
+        redirect_to course_path(@course)
+      else 
+        render :new
+      end
+    else
+      render :new
+    end
+  end
+
+  private
+
+  def student_params
+    params.require(:student).permit(:first_name, :last_name, :phone_number, :mother_language)
+  end
+
 end
