@@ -30,25 +30,29 @@
     </div>
   </div>
 
-  <div class="card-summary-add">
+  <%= link_to course_summaries_path(@course), method: :post do %>
+    <div class="card-summary-add">
       <div class="card-summary-add-infos">
         <p class="summary">Add a new summary</p>
       </div>
-      <%= link_to course_summaries_path(@course), class: "btn btn-small txt-orange", method: :post do %>
+      <button class="btn btn-small txt-orange">
         <i class="fas fa-plus"></i>
-      <% end %>
-  </div>
-
-  <% @summaries.each do |summary|%>
-    <div class="card-summary">
-      <div class="card-summary-infos">
-        <p class="summary"><%= summary.title.capitalize!%></p>
-        <p class="flashcard">Flashcard #8</p>
-        <p class="date"><%= summary.created_at.strftime("%d-%m-%Y") %></p>
-      </div>
-      <button class="btn btn-small btn-inset txt-grey">
-        <i class="fas fa-times"></i>
       </button>
     </div>
+  <% end %>
+
+  <% @summaries.each do |summary|%>
+    <%= link_to summary_path(summary), method: :get do %>
+      <div class="card-summary">
+        <div class="card-summary-infos">
+          <p class="summary"><%= summary.title %></p>
+          <p class="flashcard">Flashcard #8</p>
+          <p class="date"><%= summary.created_at.strftime("%d-%m-%Y") %></p>
+        </div>
+        <button class="btn btn-small btn-inset txt-grey">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    <% end %>
   <% end %>
 </div>
