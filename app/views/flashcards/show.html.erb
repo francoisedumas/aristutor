@@ -1,21 +1,51 @@
-<div class="p-5">
-  <p>Nombre de flashcard <%= @number_total %></p>
-  <p>Nombre de flashcard reussi <%= @number_total_passed %></p>
-  <h1><%= @summary.title %></h1>
-  <p>progress bar</p>
+<div class="main-wrapper flashcard-wrapper">
 
-  <% if @flashcard.is_a? Mistake %>
-      <p>Ecrivez correctement la phrase suivante</p>
-      <p><%= @flashcard.wrong_content %> </p>
-  <% elsif @flashcard.is_a? Word %>
-      <p>Quel est la traduction du mot suivant</p>
-      <p><%= @flashcard.word %> </p>
-  <% elsif @flashcard.nil? %>
-      <p>Well done</p>
-  <% end %>
-  <p><%= number_to_percentage(@completion, precision: 0) %></p>
-  <p>input form</p>
-  <p>button flip</p>
-  <%= @flashcard.class %>
-  <%= @flashcard.id %>
+  <%# Card progression %>
+  <p class="counter-flashcard">
+    <span class="current-flashcard" %><%= @number_total_passed %></span>/<%= @number_total %>
+  </p>
+  
+  <%# Summary title %>
+  <h1><%= @summary.title.capitalize! %></h1>
+
+  <%# Bar progression %>
+  <div class="bar">
+    <div class="percentage" style="width: <%= @percentage %>%"></div>
+  </div>
+
+  <%# Flashcard recto %>
+  <div class="question">
+    
+    <%# Flashcard question %>
+    <div>
+      <% if @flashcard.is_a? Mistake %>
+        <p>Ecrivez correctement la phrase suivante :</p>
+        <h2><%= @flashcard.wrong_content %> </h2>
+      <% elsif @flashcard.is_a? Word %>
+        <p>Traduisez le mot suivant</p>
+        <h2><%= @flashcard.word %></h2>
+      <% elsif @flashcard.nil? %>
+        <p>Well done</p>
+      <% end %>
+    </div>
+    
+    <%# Student answer %>
+    <div>
+      <input type="text" name="answer" placeholder="Tapez votre réponse">
+    </div>
+
+    <%# Button flip card %>
+    <button class="btn txt-orange flip-card">Flip card</button>
+
+  </div>
+
+  <%# Flashcard verso %>
+  <div class="answer">
+    
+    <%# Flashcard answer %>
+
+    <%# Button know / didn't know %>
+
+  </div>
+  
 </div>
