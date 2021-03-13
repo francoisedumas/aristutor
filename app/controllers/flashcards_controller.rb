@@ -33,31 +33,38 @@ class FlashcardsController < ApplicationController
     @number_total_passed = total_words_passed + total_mistakes_passed
 
     @completion = (@number_total_passed * 1.00 / @number_total * 100).to_i
-
   end
 
   def passed
     # if a student press passed button the status is updated
-
-    @flashcard.update(status: 'passed')
+    klass = params['summary_id'].split('/').last.camelize.constantize
+    id = params['summary_id'].split('/')[-2]
+    klass.find(id).update(status: 'passed')
 
     # student is redirected to the show of flashcard and get next one
-    redirect_to flashcard_path
+    redirect_to summary_flashcards_path(
+      previous_flashcard_class: klass,
+      previous_flashcard_id:    id
+    )
   end
 
   def failed
-    @flashcard.update(status: 'failed')
+
+    klass = params['summary_id'].split('/').last.camelize.constantize
+    id = params['summary_id'].split('/')[-2]
+    klass.find(id).update(status: 'failed')
     # if a student press failed button we redirect to the show of flashcard
     # passing the params class (Word or Mistake) of the failed flashcard
-    redirect_to flashcard_path(
-      previous_flashcard_class: params[:flashcard_class],
-      previous_flashcard_id:    params[:flashcard_id]
+    redirect_to summary_flashcards_path(
+      previous_flashcard_class: klass,
+      previous_flashcard_id:    id
     )
   end
 
   private
 
   def set_flashcard
+
     # generation of the class Word or Mistake
     # see it in action using rails c and 'Word'.constantize => give a "class" Word
     # 'application_record'.camelize.constantize =>  give a "class" ApplicationRecord

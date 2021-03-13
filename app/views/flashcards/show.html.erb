@@ -57,15 +57,15 @@
 
     <%# Button know / didn't know %>
     <div class="flex-components-h">
-      <%= link_to failed_summary_flashcards_path(@summary),
+      <%= link_to failed_summary_flashcards_path([@summary, @flashcard.id, @flashcard.class]),
             class: "btn txt-grey",
-            method: :patch, remote: true do %>
+            method: :patch do %>
         <p>Je ne sais pas</p>
        <% end %>
 
-      <%= link_to passed_summary_flashcards_path(@summary),
+      <%= link_to passed_summary_flashcards_path([@summary, @flashcard.id, @flashcard.class]),
             class: "btn txt-white",
-            method: :patch, remote: true do %>
+            method: :patch do %>
         <p>Je sais</p>
        <% end %>
     </div>
