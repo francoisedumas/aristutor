@@ -31,7 +31,7 @@
 
     <%# Student answer %>
     <div>
-      <input type="text" name="answer" placeholder="Tapez votre réponse">
+      <input type="text" name="answer" id="student-answer" placeholder="Tapez votre réponse">
     </div>
 
     <%# Button flip card %>
@@ -41,7 +41,7 @@
 
   <%# Flashcard verso %>
   <div class="answer" id="answer" style='display: none;'>
-
+    <p id="student-answer-display"></p>
     <%# Flashcard answer %>
     <div>
       <% if @flashcard.is_a? Mistake %>

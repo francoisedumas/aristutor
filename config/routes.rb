@@ -28,6 +28,7 @@ Rails.application.routes.draw do
       member do
         patch :passed
         patch :failed
+        get :success
       end
     end
 
