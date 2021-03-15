@@ -25,3 +25,36 @@
 .flashcard-wrapper {
   margin-top: 140px;
 }
+
+#teacher_photo {
+  display: none;
+}
+
+.fake_input {
+  display: flex;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 16px;
+  width: fit-content;
+  text-align: left;
+  border-radius: 50px;
+  background-color: #f1f1f1;
+  box-shadow:$inset-shadow;
+  border: none;
+  margin: 12px auto;
+  color: #b3b3bb;
+  align-items: center;
+  
+  label {
+    display: flex;
+    align-items: center;
+    margin: 0;
+  }
+  .fa-plus {
+    position: absolute;
+  }
+  p {
+    margin-left: 10px;
+    margin-bottom: 0;
+  }
+}
