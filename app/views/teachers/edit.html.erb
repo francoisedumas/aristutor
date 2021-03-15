@@ -2,7 +2,7 @@
 
 <h2>Edit profile</h2>
 
-<%= simple_form_for(@teacher, url: teachers_path, method: :post) do |f| %>
+<%= simple_form_for(@teacher, url: teachers_path, method: :get) do |f| %>
   <%= f.input :first_name, placeholder: "First name", label: false %>
   <%= f.input :last_name, placeholder: "Last name", label: false %>
   <%= f.input :about, placeholder: "About", label: false %>
