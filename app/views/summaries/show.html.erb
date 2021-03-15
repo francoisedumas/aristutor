@@ -28,9 +28,7 @@
   </div>
 
   <%# Formulaire Button %>
-  <%# <%= simple_form_for(@summary) do |f| %>
-    <%# <%= f.submit 'Send the summary', class: 'btn btn-large txt-white' %>
-  <%# <% end %>
+  <%= link_to "Send the summary", summary_flashcards_path(@summary), class: 'btn btn-large txt-white' %>
 
 <%= link_to "Send the summary", summary_flashcards_path(@summary), class: 'btn btn-large txt-white' %>
 </div>
