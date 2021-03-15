@@ -1,9 +1,8 @@
 <div class="main-wrapper">
 
   <div class="d-flex justify-content-between flex-wrap">
-    <%= link_to courses_path, class: "btn btn-small txt-grey", method: :get do %>
-      <i class="fas fa-chevron-left"></i>
-    <% end %>
+    <div class="hide"></div>
+
     <h2><%= @course.student.first_name %> <%= @course.student.last_name %></h2>
 
     <%= link_to edit_course_path, class: "btn btn-small txt-orange", method: :get do %>
