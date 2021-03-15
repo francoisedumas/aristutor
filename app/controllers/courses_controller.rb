@@ -25,11 +25,12 @@ class CoursesController < ApplicationController
       @class_language_name = "Portuguese"
     end
 
-    # Sending the summary
-    @number_of_summary = @course.summaries.count
+    # Sending the summary info
+    @number_of_summary = @course.summaries.size
+    all_summary_passed = @summaries.select {|summary| summary.status == "passed"}
     # This enables to get number of summaries done
     # but investigate with a join query (to avoid N+1 query)
-    total_summary_done = @course.done_summaries.size
+    total_summary_done = all_summary_passed.size
     @completion = @number_of_summary.zero? ? 0 : (total_summary_done * 1.00 / @number_of_summary * 100).to_i
   end
 
@@ -47,7 +48,7 @@ class CoursesController < ApplicationController
     p @course
     if @course.save
       redirect_to course_path(@course)
-    else 
+    else
       render :new
     end
   end
