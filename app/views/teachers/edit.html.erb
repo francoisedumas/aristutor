@@ -6,6 +6,27 @@
   <%= f.input :first_name, placeholder: "First name", label: false %>
   <%= f.input :last_name, placeholder: "Last name", label: false %>
   <%= f.input :about, label: false, :as => :text, :input_html => { placeholder: 'About', :rows => 7} %>
+  <%= f.input :photo,
+                  as: :file,
+                  required: false,
+                  label: false,
+                  input_html: { autocomplete: :off },
+                  label_html: { class: "btn btn-small txt-orange" } %>
+        
+        <div class="fake_input">
+          <label  for="teacher_photo" id="fake-input">
+            <div class="btn btn-small txt-orange">
+              <i class="fas fa-plus "></i>
+            </div>
+            <p>Photo (optional)</p>
+          </label>
+          
+        </div>
+        
+    </div>
+
+
+
   <%= f.submit 'Edit profile', :class => 'btn btn-large txt-white' %>
 <% end %>
 
