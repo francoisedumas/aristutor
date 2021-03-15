@@ -1,4 +1,14 @@
-<h2>Forgot your password?</h2>
+<div class="sign-wrapper text-center">
+  <div class="nav">
+    <div></div>
+    <div class="title">
+      <div class="logo">
+        <span>A</span>
+      </div>
+      <h2>Forgot your password?</h2>
+    </div>
+    <div></div>
+  </div>
 
 <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= f.error_notification %>
@@ -6,12 +16,14 @@
   <div class="form-inputs">
     <%= f.input :email,
                 required: true,
+                label: false,
                 autofocus: true,
+                placeholder: 'Email',
                 input_html: { autocomplete: "email" } %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Send me reset password instructions" %>
+    <%= f.button :submit, "Reset password", class:"btn txt-orange" %>
   </div>
 <% end %>
 

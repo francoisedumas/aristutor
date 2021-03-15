@@ -31,7 +31,6 @@ gem 'simple_form'
 # confetti
 gem 'funfetti'
 
-
 ######## OWN GEMS #######
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
@@ -43,6 +42,8 @@ gem 'devise'
 gem 'devise_invitable'
 gem 'cloudinary', '~> 1.16.0'
 gem 'pg_search', '~> 2.3.0'
+gem 'abyme'
+gem 'google-cloud-translate'
 
 group :development, :test do
   gem 'pry-byebug'
