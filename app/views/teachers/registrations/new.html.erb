@@ -5,7 +5,7 @@
       <div class="logo">
         <span>A</span>
       </div>
-      <h2>Sign Up</h2>
+      <h2>Sign up to Aristutor</h2>
     </div>
     <div></div>
   </div>
@@ -19,13 +19,13 @@
                   label:false,
                   autofocus: true,
                   placeholder: 'First name',
-                  input_html: { autocomplete: "email" } %>
+                  input_html: { autocomplete: :off } %>
       <%= f.input :last_name,
                   required: false,
                   label:false,
                   autofocus: true,
                   placeholder: 'Last name',
-                  input_html: { autocomplete: "email" } %>
+                  input_html: { autocomplete: :off } %>
       <%= f.input :email,
                   required: true,
                   autofocus: true,
@@ -37,10 +37,27 @@
                   label: false,
                   placeholder: 'Password',
                   input_html: { autocomplete: "new-password" } %>
+      <%= f.input :photo,
+                  as: :file,
+                  required: false,
+                  label: false,
+                  input_html: { autocomplete: :off },
+                  label_html: { class: "btn btn-small txt-orange" } %>
+        
+        <div class="fake_input">
+          <label  for="teacher_photo" id="fake-input">
+            <div class="btn btn-small txt-orange">
+              <i class="fas fa-plus "></i>
+            </div>
+            <p>Photo (optional)</p>
+          </label>
+          
+        </div>
+        
     </div>
 
     <div class="form-actions">
-      <%= f.button :submit, "Sign Up", class:'txt-orange' %>
+      <%= f.button :submit, "Sign Up", class:'btn txt-orange' %>
     </div>
   <% end %>
 
