@@ -1,11 +1,19 @@
-<div class="main-wrapper">
-
-<h2>Edit profile</h2>
+<div class="sign-wrapper text-center">
+  <div class="nav">
+    <div></div>
+    <div class="title">
+      <div class="logo">
+        <span>A</span>
+      </div>
+      <h2>Edit profile</h2>
+    </div>
+    <div></div>
+  </div>
 
 <%= simple_form_for(@teacher) do |f| %>
   <%= f.input :first_name, placeholder: "First name", label: false %>
   <%= f.input :last_name, placeholder: "Last name", label: false %>
-  <%= f.input :about, label: false, :as => :text, :input_html => { placeholder: 'About', :rows => 7} %>
+  <%= f.input :about, label: false, :as => :text, :input_html => { placeholder: 'About', :rows => 3} %>
   <%= f.input :photo,
                   as: :file,
                   required: false,
@@ -18,16 +26,15 @@
             <div class="btn btn-small txt-orange">
               <i class="fas fa-plus "></i>
             </div>
-            <p>Photo (optional)</p>
+            <p>Photo</p>
           </label>
           
         </div>
         
-    </div>
 
 
 
-  <%= f.submit 'Edit profile', :class => 'btn btn-large txt-white' %>
+  <%= f.submit 'Edit profile', :class => 'btn txt-orange' %>
 <% end %>
 
 </div>
