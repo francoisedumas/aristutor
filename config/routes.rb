@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :courses do
     resources :students, only: [:new, :create, :edit, :update]
     # aristutor.co/courses/students/42 here we are on student id:42
-    
+
     # review where update and edit really needed
     resources :summaries, only: [:create, :edit, :update]
     # aristutor.co/courses/:courses_id/summary/:id/edit
@@ -28,6 +28,7 @@ Rails.application.routes.draw do
       member do
         patch :passed
         patch :failed
+        get :success
       end
     end
 
