@@ -1,4 +1,4 @@
-<div class="main-wrapper flashcard-wrapper">
+<div class="main-wrapper flashcard-wrapper" id="flashcard-wrapper">
 
   <%# Card progression %>
   <p class="counter-flashcard">
@@ -10,7 +10,7 @@
 
   <%# Bar progression %>
   <div class="bar">
-    <div class="percentage" style="width: <%= @percentage %>%"></div>
+    <div class="percentage" style="width: <%= @completion %>%"></div>
   </div>
 
   <%# Flashcard recto %>
@@ -57,22 +57,18 @@
 
     <%# Button know / didn't know %>
     <div class="flex-components-h">
-      <%= link_to failed_summary_flashcards_path([@summary, @flashcard.id, @flashcard.class]),
-            class: "btn txt-grey",
-            method: :patch,
-            remote: true do %>
-        <p>Je ne sais pas</p>
-       <% end %>
+      <%= link_to "Je ne sais pas",
+        failed_summary_flashcards_path([@summary, @flashcard.id, @flashcard.class]),
+        class: "btn txt-grey",
+        method: :patch,
+        remote: true %>
 
-      <%= link_to passed_summary_flashcards_path([@summary, @flashcard.id, @flashcard.class]),
-            class: "btn txt-white",
-            method: :patch,
-            remote: true do %>
-        <p>Je sais</p>
-       <% end %>
+      <%= link_to "Je sais",
+        passed_summary_flashcards_path([@summary, @flashcard.id, @flashcard.class]),
+        class: "btn txt-white",
+        method: :patch,
+        remote: true %>
     </div>
-
-
   </div>
 
 </div>

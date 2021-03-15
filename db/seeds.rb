@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 puts "Cleaning Database"
 Mistake.destroy_all
+Word.destroy_all
 Summary.destroy_all
 Course.destroy_all
 TeacherLanguage.destroy_all
@@ -93,7 +94,7 @@ summary_6 = Summary.create!(title: "geography", course: course_brice_jaime)
 summary_7 = Summary.create!(title: "jobs", course: course_brice_juan)
 summary_8 = Summary.create!(title: "weather", course: course_brice_michele)
 summary_9 = Summary.create!(title: "pets", course: course_john_sophie)
-summary_10 = Summary.create!(title: "food", course: course_john_sophie, status: "done")
+summary_10 = Summary.create!(title: "food", course: course_john_sophie, status: "passed")
 puts "Summaries well generated"
 
 puts "Generate Mistakes seeds"
@@ -126,3 +127,10 @@ mistake_16 = Mistake.create!(wrong_content: "fries french" , correct_content: "f
 
 puts "Mistakes well generated"
 
+puts "Generate Words seeds"
+
+word_1 = Word.create!(word: "car" , translation: "voiture" , status: "created", summary: summary_1)
+word_2 = Word.create!(word: "boat" , translation: "bateau" , status: "created", summary: summary_1)
+word_3 = Word.create!(word: "truck" , translation: "camion" , status: "created", summary: summary_1)
+
+puts "Words well generated"
