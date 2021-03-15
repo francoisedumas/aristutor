@@ -1,6 +1,6 @@
 // -------------------- Forms --------------------
 
-input {
+input, textarea {
   font-size: 14px;
   font-weight: 400;
   padding: 16px;
@@ -12,6 +12,10 @@ input {
   border: none;
   margin: 12px 0;
   color: $grey;
+}
+
+textarea {
+  border-radius:15px;
 }
 
 input:focus {

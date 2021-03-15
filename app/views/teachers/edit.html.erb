@@ -5,8 +5,9 @@
 <%= simple_form_for(@teacher) do |f| %>
   <%= f.input :first_name, placeholder: "First name", label: false %>
   <%= f.input :last_name, placeholder: "Last name", label: false %>
-  <%= f.input :about, placeholder: "About", label: false %>
+  <%= f.input :about, label: false, :as => :text, :input_html => { placeholder: 'About', :rows => 7} %>
   <%= f.submit 'Edit profile', :class => 'btn btn-large txt-white' %>
 <% end %>
 
 </div>
+
