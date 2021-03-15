@@ -5,9 +5,7 @@
     box-shadow: $text-shadow;
   }
   .flip-card {
-    position: absolute;
-    bottom: 90px;
-    left: 29%;
+    margin-top:100px;
   }
 }
 
@@ -32,4 +30,28 @@
 
 .counter-flashcard {
   margin-bottom: 0px !important;
+}
+
+
+.animate {
+  animation: fadeDown .75s ;
+  animation-timing-function:cubic-bezier(0.4, 0.0, 0.2, 1);
+  animation-fill-mode:forwards;
+}
+
+@keyframes fadeDown {
+  0% {
+    margin-top:140px;
+    opacity:1;
+  }
+
+  50% {
+    margin-top:1000px;
+    opacity:0;
+  }
+
+  100% {
+    margin-top:140px;
+    opacity:1;
+  }
 }
