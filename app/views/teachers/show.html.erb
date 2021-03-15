@@ -1,0 +1,30 @@
+<div class="main-wrapper">
+
+  <div class="d-flex justify-content-between flex-wrap">
+    <%= link_to courses_path, class: "btn btn-small txt-grey", method: :get do %>
+      <i class="fas fa-chevron-left"></i>
+    <% end %>
+    <h2><%= current_teacher.first_name %> <%= current_teacher.last_name %></h2>
+
+    <%= link_to edit_teacher_path, class: "btn btn-small txt-orange", method: :get do %>
+      <i class="fas fa-pen"></i>
+    <% end %>
+  </div>
+
+  <% if current_teacher.photo.attached? %>
+      <%= cl_image_tag current_teacher.photo.key, class: "small-avatar" %>
+    <% else %>
+      <p>Missing image</p>
+  <% end %>
+
+  <div class="card-summary">
+    <div class="card-summary-infos">
+      <p class="summary">Overview</p>
+      <p class="flashcard"><%= current_teacher.about %></p>
+    </div>
+  </div>
+
+  <div class="flex-components">
+    <%= link_to "log out", destroy_teacher_session_path, method: :delete, class: "btn txt-orange" %>
+  </div>
+</div>
