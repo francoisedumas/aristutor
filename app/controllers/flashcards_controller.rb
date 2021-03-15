@@ -53,5 +53,7 @@ class FlashcardsController < ApplicationController
   end
 
   def success
+    id = params['summary_id'].split('/')[0]
+    @summary = Summary.find(id)
   end
 end

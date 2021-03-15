@@ -28,6 +28,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'font-awesome-sass'
 # Get easy forms
 gem 'simple_form'
+# confetti
+gem 'funfetti'
 
 
 ######## OWN GEMS #######
