@@ -8,7 +8,7 @@ class TeachersController < ApplicationController
   end
 
   def update
-    @teacher = Teacher.find(params[:id])
+    @teacher = current_teacher
     @teacher.update(teacher_params)
     redirect_to teacher_path(@teacher)
   end
