@@ -10,7 +10,7 @@
   <a class="navbar-footer-icon">
     <%= image_tag ('icon-data.svg') %>
   </a>
-  <a class="navbar-footer-icon">
+  <%= link_to teacher_path, class: "navbar-footer-icon" do %>
     <%= image_tag ('icon-profile.svg') %>
-  </a>
+  <% end %>
 </div>
