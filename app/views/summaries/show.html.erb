@@ -2,11 +2,13 @@
 
   <%# Header %>
   <div class="nav">
+    <%= link_to :back, class: "btn btn-small txt-grey", method: :get do %>
+      <i class="fas fa-chevron-left"></i>
+    <% end %>
+    <h2><%= @summary.title %></h2>
     <%= link_to edit_summary_path, class: "btn btn-small txt-orange", method: :get do %>
       <i class="fas fa-pen"></i>
     <% end %>
-    <h2><%= @summary.title %></h2>
-    <div class="hide"></div>
   </div>
 
   <%# Body with overview, vocabulary box and mistakes box %>
