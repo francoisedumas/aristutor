@@ -5,14 +5,14 @@
     <%= link_to :back, class: "btn btn-small txt-grey", method: :get do %>
       <i class="fas fa-chevron-left"></i>
     <% end %>
-    <h2>New summary</h2>
+    <h2>Edit the summary</h2>
     <div></div>
   </div>
 
 <%# Formulaire %>
-  <%= simple_form_for(@summary) do |f| %>
-    <%= f.input :title, placeholder: "Theme", label: false %>
-    <%= f.input :overview, placeholder: "Overview", label: false %>
+  <%= form_for([@course, @summary], url: course_summary_path(course_id: @course&.id || @summary.course_id, id: @summary.id), method: :put) do |f| %>
+    <%= f.text_field :title, placeholder: "Theme", label: false %>
+    <%= f.text_area :overview, placeholder: "Overview", label: false %>
     <%= f.submit 'Save the summary', :class => 'btn btn-large txt-white' %>
   <% end %>
 

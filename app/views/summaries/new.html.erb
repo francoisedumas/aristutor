@@ -1,0 +1,45 @@
+<div class="main-wrapper">
+
+  <%= form_for([@course, @summary], url: course_summaries_path(course_id: @course&.id || @summary.course_id), method: :post) do |f| %>
+
+  <%# Header %>
+    <div class="nav">
+      <%= link_to course_path(@course || @summary.course), class: "btn btn-small txt-grey", method: :get do %>
+        <i class="fas fa-chevron-left"></i>
+      <% end %>
+      <div class="hide"></div>
+      <div class="hide"></div>
+    </div>
+  
+    <%# Title %>
+    <div class="input-title">Title
+      <%= f.text_field :title, placeholder: "Type your theme" %>
+    </div>
+
+    <%# Overview %>
+    <div class="input-title">Overview
+      <%= f.text_area :overview, placeholder: "Type an overview of the summary" %>
+    </div>
+
+    <%# Vocabulary box %>
+    <div class="input-title">Vocabulary box
+      <%= text_area(:words, :post, options = { placeholder: "boat, car, scooter" }) %>
+    </div>
+
+    <%# Mistakes box %>
+    <div class="input-title">Mistakes box
+      <%= f.abyme_for(:mistakes, partial: 'summaries/mistake_fields') do |abyme| %>
+        <%= abyme.records %>
+        <%= abyme.new_records %>
+        <%= add_associated_record content: "Add a mistake", class: "btn txt-orange" %>
+      <% end %>
+    </div>
+
+    <%# Save button %>
+    <div>
+      <%= f.submit 'Save the summary', :class => 'btn btn-large txt-white' %>
+    </div>
+
+  <% end %>
+
+</div>

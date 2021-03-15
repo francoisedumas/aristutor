@@ -2,7 +2,7 @@
 
   <%# Header %>
   <div class="nav">
-    <%= link_to edit_summary_path, class: "btn btn-small txt-orange", method: :get do %>
+    <%= link_to edit_course_summary_path(course_id: @summary.course.id, id: @summary.id), class: "btn btn-small txt-orange", method: :get do %>
       <i class="fas fa-pen"></i>
     <% end %>
     <h2><%= @summary.title %></h2>
@@ -26,9 +26,6 @@
   </div>
 
   <%# Formulaire Button %>
-  <%# <%= simple_form_for(@summary) do |f| %>
-    <%# <%= f.submit 'Send the summary', class: 'btn btn-large txt-white' %>
-  <%# <% end %>
+  <%= link_to "Send the summary", summary_flashcards_path(@summary), class: 'btn btn-large txt-white' %>
 
-<%= link_to "Send the summary", summary_flashcards_path(@summary), class: 'btn btn-large txt-white' %>
 </div>
