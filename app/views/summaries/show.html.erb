@@ -6,7 +6,7 @@
       <i class="fas fa-chevron-left"></i>
     <% end %>
     <h2><%= @summary.title %></h2>
-    <%= link_to edit_summary_path, class: "btn btn-small txt-orange", method: :get do %>
+    <%= link_to edit_course_summary_path(@summary), class: "btn btn-small txt-orange", method: :get do %>
       <i class="fas fa-pen"></i>
     <% end %>
   </div>
@@ -30,5 +30,4 @@
   <%# Formulaire Button %>
   <%= link_to "Send the summary", summary_flashcards_path(@summary), class: 'btn btn-large txt-white' %>
 
-<%= link_to "Send the summary", summary_flashcards_path(@summary), class: 'btn btn-large txt-white' %>
 </div>
