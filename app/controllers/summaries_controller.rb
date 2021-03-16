@@ -1,13 +1,20 @@
 class SummariesController < ApplicationController
+  def new
+    @course = Course.find(params[:course_id])
+    @summary = Summary.new
+    @summary.mistakes.new
+  end
+  
   def create
-    @summary = Summary.new()
+    @summary = Summary.new(summary_params)
+
     course = Course.find(params[:course_id])
     @summary.course = course
 
     if @summary.save
-      redirect_to edit_summary_path(@summary)
+      redirect_to summary_path(@summary.id)
     else
-      redirect_to course_path(course)
+      render :new
     end
   end
 
@@ -28,6 +35,7 @@ class SummariesController < ApplicationController
   private
 
   def summary_params
-    params.require(:summary).permit(:title, :overview)
+    params.require(:summary).permit(:title, :overview, abyme_attributes)
   end
+
 end

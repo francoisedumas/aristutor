@@ -1,21 +1,24 @@
-<div class="main-wrapper flashcard-wrapper">
+<div class="logo">
+  <span>A</span>
+</div>
+<div class="main-wrapper flashcard-wrapper" id="flashcard-wrapper">
 
   <%# Card progression %>
   <p class="counter-flashcard">
     <span class="current-flashcard" %><%= @number_total_passed %></span>/<%= @number_total %>
   </p>
-  
+
   <%# Summary title %>
   <h1><%= @summary.title.capitalize! %></h1>
 
   <%# Bar progression %>
   <div class="bar">
-    <div class="percentage" style="width: <%= @percentage %>%"></div>
+    <div class="percentage" style="width: <%= @completion %>%"></div>
   </div>
 
   <%# Flashcard recto %>
-  <div class="question">
-    
+  <div class="question" id="question" style='display: block;'>
+
     <%# Flashcard question %>
     <div>
       <% if @flashcard.is_a? Mistake %>
@@ -28,24 +31,47 @@
         <p>Well done</p>
       <% end %>
     </div>
-    
+
     <%# Student answer %>
     <div>
-      <input type="text" name="answer" placeholder="Tapez votre réponse">
+      <input type="text" name="answer" id="student-answer" placeholder="Tapez votre réponse">
     </div>
 
     <%# Button flip card %>
-    <button class="btn txt-orange flip-card">Flip card</button>
+    <button class="btn txt-orange flip-card" id="flip">Flip card</button>
 
   </div>
 
   <%# Flashcard verso %>
-  <div class="answer">
-    
+  <div class="answer" id="answer" style='display: none;'>
+    <p id="student-answer-display"></p>
     <%# Flashcard answer %>
+    <div>
+      <% if @flashcard.is_a? Mistake %>
+        <p>La bonne phrase est :</p>
+        <h2><%= @flashcard.correct_content %> </h2>
+      <% elsif @flashcard.is_a? Word %>
+        <p>La bonne traduction est :</p>
+        <h2><%= @flashcard.translation %></h2>
+      <% elsif @flashcard.nil? %>
+        <p>Well done</p>
+      <% end %>
+    </div>
 
     <%# Button know / didn't know %>
+    <div class="flex-components-h">
+      <%= link_to "Je ne sais pas",
+        failed_summary_flashcards_path([@summary, @flashcard.id, @flashcard.class]),
+        class: "btn txt-grey",
+        method: :patch,
+        remote: true %>
 
+      <%= link_to "Je sais",
+        passed_summary_flashcards_path([@summary, @flashcard.id, @flashcard.class]),
+        class: "btn txt-white",
+        method: :patch,
+        remote: true %>
+    </div>
   </div>
-  
+
 </div>

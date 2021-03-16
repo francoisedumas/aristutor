@@ -5,19 +5,19 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
 
-  resource :teachers, only: [:show, :edit, :update]
+  resource :teacher, only: [:show, :edit, :update]
 
   resources :courses do
     resources :students, only: [:new, :create, :edit, :update]
     # aristutor.co/courses/students/42 here we are on student id:42
-    
+
     # review where update and edit really needed
-    resources :summaries, only: [:create, :edit, :update]
+    resources :summaries, only: [:new, :create, :edit, :update]
     # aristutor.co/courses/:courses_id/summary/:id/edit
 
   end
 
-  resources :summaries, only: [:index, :show, :edit, :update] do
+  resources :summaries, only: [:show] do
     # aristutor.co/summaries/54 here we are on summary id:54
     # aristutor.co/summaries/55/edit here we are on summary id:55
     member do
@@ -28,6 +28,7 @@ Rails.application.routes.draw do
       member do
         patch :passed
         patch :failed
+        get :success
       end
     end
 

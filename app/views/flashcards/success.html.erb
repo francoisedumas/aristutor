@@ -1,0 +1,16 @@
+<div class="logo">
+  <span>A</span>
+</div>
+<div class="main-wrapper flashcard-wrapper">
+  <h1>WELL DONE!</h1>
+  <%# Summary title %>
+  <h1><%= @summary.title.capitalize! %></h1>
+  <%# Bar progression %>
+  <div class="bar">
+    <div class="percentage" style="width: 100%"></div>
+  </div>
+</div>
+<script type="module">
+  import confetti from "https://cdn.skypack.dev/canvas-confetti";
+  confetti();
+</script>
