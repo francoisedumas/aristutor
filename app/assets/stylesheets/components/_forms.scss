@@ -18,6 +18,20 @@ textarea {
   border-radius:15px;
 }
 
+select {
+  font-size: 14px;
+  font-weight: 400;
+  padding: 16px;
+  width: 100%;
+  text-align: left;
+  border-radius: 50px;
+  background-color: $background-grey;
+  box-shadow: $inset-shadow;
+  border: none;
+  margin: 12px 0;
+  color: $grey;
+}
+
 .input-title {
   font-weight: 600;
   font-size: 12px;
