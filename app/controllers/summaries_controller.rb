@@ -52,7 +52,7 @@ class SummariesController < ApplicationController
 
     client   = Google::Cloud::Translate.translation_service
     response = client.translate_text(contents: words, mime_type:"text/plain",source_language_code:"en-US",target_language_code:"fr-FR", parent: "projects/silent-effect-307707")
-    
+
     words.each_with_index do |word, index|
       words_params[index.to_s] = { word: word, translation: response.translations[index]["translated_text"] }
     end
