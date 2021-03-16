@@ -51,6 +51,18 @@
   }
 }
 
+.txt-orange-link {
+  color: $primary-orange;
+  background-color: $background-grey;
+  text-decoration: underline;
+  &:hover,
+  &:active,
+  &:focus {
+    color: $dark-orange;
+    box-shadow: $white-shadow;
+  }
+}
+
 .txt-orange-back-white {
   color: $primary-orange;
   background-color: white;
