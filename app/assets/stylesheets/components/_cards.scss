@@ -4,7 +4,24 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+
+  &-data {
+    box-shadow: $inset-shadow;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    border-radius: 50px;
+
+    &-figures {
+      width: 50%;
+      h1 {
+        color: $dark-orange;
+        text-shadow: $text-shadow;
+      }
+    }
+  }
 }
+
 
 .card-student {
   margin: 12px 0px;

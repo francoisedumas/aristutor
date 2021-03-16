@@ -17,12 +17,12 @@
   <% end %>
 
   <h2 class="hp-subtitle"><%= @class_language_name %> student - Bali</h2>
-  <div class="d-flex justify-content-between flex-wrap">
-    <div class="card-student-name">
+  <div class="cards-students-data">
+    <div class="cards-students-data-figures">
       <h2 class="hp-subtitle">Summaries</h2>
       <h1> <%= @number_of_summary %></h1>
     </div>
-    <div class="card-student-name">
+    <div class="cards-students-data-figures">
       <h2 class="hp-subtitle">Completion</h2>
       <!-- here we use a helper number_to_percentage inherited from ActionView to show as % -->
       <h1> <%= number_to_percentage(@completion, precision: 0) %> </h1>
