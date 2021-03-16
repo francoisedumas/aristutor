@@ -6,6 +6,7 @@ class SummariesController < ApplicationController
   end
   
   def create
+    params[:summary][:words_attributes] = build_words_params
     @summary = Summary.new(summary_params)
 
     course = Course.find(params[:course_id])
@@ -35,24 +36,21 @@ class SummariesController < ApplicationController
   private
 
   def summary_params
-    # translate = translate()
-    # words = params['words']['post'].split(',')
-    # translate = {}
-    # words.each do |word|
-    #   translate[word] = {word: word}
-    # end
-    # new_word = Word.new(translate)
-    # params.require(:summary).permit(:title, :overview, Word.new(translate), abyme_attributes)
-    params.require(:summary).permit(:title, :overview, Word.new(translate), abyme_attributes)
+    params.require(:summary).permit(:title, :overview, mistakes_attributes: [:wonrg_content, :correct_conten], words_attributes: [:word, :translation])
   end
 
-  # def translate
-  #   words = params['words']['post'].split(',')
-  #   client = Google::Cloud::Translate.translation_service
-  #   response = client.translate_text(contents: words, mime_type:"text/plain",source_language_code:"en-US",target_language_code:"fr-FR", parent: "projects/silent-effect-307707")
-  #   translate = {}
-  #   words.each_with_index {|k,i| translate[k] = {word: k, translation: response.translations[i]["translated_text"]}}
-  #   return translate
-  # end
+  def build_words_params
+    words_params = {}
+    words = params[:words].split(',').map(&:strip)
+
+    client   = Google::Cloud::Translate.translation_service
+    response = client.translate_text(contents: words, mime_type:"text/plain",source_language_code:"en-US",target_language_code:"fr-FR", parent: "projects/silent-effect-307707")
+    
+    words.each_with_index do |word, index|
+      words_params[index.to_s] = { word: word, translation: response.translations[index]["translated_text"] }
+    end
+
+    return words_params
+  end
 
 end
