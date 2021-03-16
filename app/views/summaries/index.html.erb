@@ -1,0 +1,28 @@
+<div class="main-wrapper">
+  <div class="nav">
+    <div></div>
+    <h2>All summaries</h2>
+    <div></div>
+  </div>
+
+  <% @summaries.each do |summary|%>
+    <%= link_to summary_path(summary), method: :get do %>
+      <div class="card-summary">
+        <div class="card-summary-infos">
+          <p class="summary"><%= summary.title %></p>
+          <p class="flashcard">Flashcard #8</p>
+          <p class="date"><%= summary.created_at.strftime("%d-%m-%Y") %></p>
+        </div>
+        <% if summary.status != "passed" %>
+          <button class="btn btn-small btn-inset txt-grey">
+            <i class="fas fa-times"></i>
+          </button>
+        <% else %>
+          <button class="btn btn-small btn-inset txt-white">
+            <i class="fas fa-check"></i>
+          </button>
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>
+</div>

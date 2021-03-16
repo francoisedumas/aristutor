@@ -9,10 +9,10 @@ class CoursesController < ApplicationController
 
   def show
     # Sending object course
-    @course = Course.find(params[:id])
+    @course = Course.includes(:summaries).find(params[:id])
 
     # Loading the summaries from the given course
-    @summaries = Summary.includes(:course).where(course_id: params[:id]).order('created_at DESC')
+    @summaries = @course.summaries.order('created_at DESC')
 
     # Sending the class language
     if @course.class_language == "EN"

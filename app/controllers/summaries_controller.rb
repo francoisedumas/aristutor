@@ -4,7 +4,7 @@ class SummariesController < ApplicationController
     @summary = Summary.new
     @summary.mistakes.new
   end
-  
+
   def create
     @summary = Summary.new(summary_params)
 
@@ -30,6 +30,13 @@ class SummariesController < ApplicationController
 
   def show
     @summary = Summary.find(params[:id])
+  end
+
+  def index
+    teacher = Teacher.includes(:courses, :summaries).find(current_teacher.id)
+    # Loading the summaries from the given course
+    @summaries = teacher.summaries.order('created_at DESC')
+
   end
 
   private
