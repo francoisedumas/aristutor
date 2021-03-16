@@ -28,8 +28,14 @@ import {flipDisplay} from '../customs/flashcards';
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
+// import React from "https://cdn.skypack.dev/react";
+// import canvasConfetti as module from 'https://cdn.skypack.dev/canvas-confetti';
+//import { confetti } as module from "https://cdn.skypack.dev/canvas-confetti";
+
+
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   flipDisplay();
+  // canvasConfetti();
 });
