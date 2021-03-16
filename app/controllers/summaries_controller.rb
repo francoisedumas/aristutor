@@ -36,7 +36,7 @@ class SummariesController < ApplicationController
   private
 
   def summary_params
-    params.require(:summary).permit(:title, :overview, mistakes_attributes: [:wonrg_content, :correct_conten], words_attributes: [:word, :translation])
+    params.require(:summary).permit(:title, :overview, abyme_attributes, words_attributes: [:word, :translation])
   end
 
   def build_words_params

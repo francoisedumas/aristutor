@@ -8,7 +8,7 @@
   </div>
 
   <%# Formulaire %>
-  <%= form_for([@course, @summary], url: course_summaries_path(course_id: @course&.id || @summary.course_id), method: :patch) do |f| %>
+  <%= form_for([@course, @summary], url: course_summary_path(course_id: @course&.id || @summary.course_id, summary_id: @summary.id), method: :patch) do |f| %>
   
     <%# Title %>
     <div class="input-title">Title
@@ -35,7 +35,7 @@
         <% end %>
       </div>
       <%= abyme.records %>
-      <%= abyme.new_records %>   
+      <%= abyme.new_records %>
     <% end %>
     </div>
 

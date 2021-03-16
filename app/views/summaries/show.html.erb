@@ -23,9 +23,11 @@
   <div class="card-summary">
     <div class="card-summary-infos">
       <p class="summary">Vocabulary box</p>
-      <p class="flashcard"><%= @summary.words %></p>
       <% @summary.words.each do |word| %>
-        <p class="flashcard"><%= word.word %> => <%= word.translation %></p>
+      <div class="summary-box">
+        <p class="summary-box-word"><%= word.word %></p>
+        <p class="summary-box-translation"><%= word.translation %></p>
+      </div>
       <% end %>
     </div>
   </div>
@@ -35,12 +37,15 @@
     <div class="card-summary-infos">
       <p class="summary">Mistakes box</p>
       <% @summary.mistakes.each do |mistake| %>
-        <p class="flashcard"><%= mistake.wrong_content %> => <%= mistake.correct_content %></p>
+      <div class="summary-box">
+        <p class="summary-box-wrong"><%= mistake.wrong_content %></p>
+        <p class="summary-box-correct"><%= mistake.correct_content %></p>
+      </div>
       <% end %>
     </div>
   </div>
 
   <%# Send button %>
-  <%= link_to "Save the summary", summary_flashcards_path(@summary), class: 'btn btn-large txt-white' %>
+  <%= link_to "Send the summary", summary_flashcards_path(@summary), class: 'btn btn-large txt-white' %>
 
 </div>
