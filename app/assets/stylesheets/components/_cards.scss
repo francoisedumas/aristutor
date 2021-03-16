@@ -83,10 +83,49 @@
   }
 
   &-infos {
+    width: 100%;
+    
     .summary {
       font-weight: 600;
       color: $dark-grey;
+      padding-bottom: 4px;
     }
+    
+    .summary-box {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      text-shadow: $text-shadow;
+      
+      &-word {
+        font-weight: 600;
+        color: $grey;
+        width: 50%;
+        text-align: center;
+      }
+
+      &-translation {
+        font-weight: 600;
+        color: $dark-grey;
+        width: 50%;
+        text-align: center;
+      }
+
+      &-wrong {
+        font-weight: 600;
+        color: $wrong-red;
+        width: 50%;
+        text-align: center;
+      }
+
+      &-correct {
+        font-weight: 600;
+        color: $correct-green;
+        width: 50%;
+        text-align: center;
+      }
+    }
+    
   }
 }
 
