@@ -15,7 +15,7 @@ input, textarea {
 }
 
 textarea {
-  border-radius: 15px;
+  border-radius:15px;
 }
 
 .input-title {
@@ -49,7 +49,7 @@ input:focus, textarea:focus, .input-title:focus, .input-mistakes-box:focus {
   outline:none;
 }
 
-select {
+.fake_input {
   font-size: 14px;
   font-weight: 400;
   padding: 16px;
