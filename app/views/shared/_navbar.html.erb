@@ -1,8 +1,11 @@
 <%# Footer navbar on all teacher's screens %>
 
 <div class="navbar-footer">
-  <%= link_to courses_path, class: "navbar-footer-icon" do %>
-    <%= image_tag ('icon-student.svg') %>
+  <%= link_to courses_path do %>
+    <div class= "navbar-footer-icon <%= current_class?(courses_path)%>">
+      <%= image_tag ('icon-student.svg') %>
+      <%= image_tag ('icon-active-student.svg'),class: 'img-active' %>
+    </div>
   <% end %>
   <%= link_to teacher_summaries_path, class: "navbar-footer-icon" do %>
     <%= image_tag ('icon-summary.svg') %>
@@ -10,7 +13,10 @@
   <a class="navbar-footer-icon">
     <%= image_tag ('icon-data.svg') %>
   </a>
-  <%= link_to teacher_path, class: "navbar-footer-icon" do %>
-    <%= image_tag ('icon-profile.svg') %>
+  <%= link_to teacher_path do %>
+    <div class= "navbar-footer-icon <%= current_class?(teacher_path)%>">
+    <%= image_tag ('icon-profile.svg')%>
+      <%= image_tag ('icon-active-profile.svg'),class: 'img-active' %>
+    </div>
   <% end %>
 </div>
