@@ -7,7 +7,7 @@
   <%= f.input :first_name, placeholder: "First name", label: false %>
   <%= f.input :last_name, placeholder: "Last name", label: false %>
   <%= f.input :phone_number, placeholder: "Phone number", label: false %>
-  <%= f.input :mother_language, placeholder: "Mother language", label: false %>
+  <%= f.input :mother_language, prompt: "Mother language", collection: Student::LANGUAGES, label: false %>
   <%= f.submit 'Add a student', :class => 'btn btn-large txt-white' %>
 <% end %>
 

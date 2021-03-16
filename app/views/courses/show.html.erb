@@ -1,9 +1,8 @@
 <div class="main-wrapper">
 
   <div class="d-flex justify-content-between flex-wrap">
-    <%= link_to courses_path, class: "btn btn-small txt-grey", method: :get do %>
-      <i class="fas fa-chevron-left"></i>
-    <% end %>
+    <div class="hide"></div>
+
     <h2><%= @course.student.first_name %> <%= @course.student.last_name %></h2>
 
     <%= link_to edit_course_path, class: "btn btn-small txt-orange", method: :get do %>
@@ -12,9 +11,9 @@
   </div>
 
   <% if @course.student.photo.attached? %>
-      <%= cl_image_tag @course.student.photo.key, class: "small-avatar" %>
-    <% else %>
-      <p>Missing image</p>
+    <%= cl_image_tag @course.student.photo.key, class: "small-avatar" %>
+  <% else %>
+    <p>Missing image</p>
   <% end %>
 
   <h2 class="hp-subtitle"><%= @class_language_name %> student - Bali</h2>
@@ -30,7 +29,7 @@
     </div>
   </div>
 
-  <%= link_to course_summaries_path(@course), method: :post do %>
+  <%= link_to new_course_summary_path(@course), method: :get do %>
     <div class="card-summary-add">
       <div class="card-summary-add-infos">
         <p class="summary">Add a new summary</p>
@@ -49,9 +48,15 @@
           <p class="flashcard">Flashcard #8</p>
           <p class="date"><%= summary.created_at.strftime("%d-%m-%Y") %></p>
         </div>
-        <button class="btn btn-small btn-inset txt-grey">
-          <i class="fas fa-times"></i>
-        </button>
+        <% if summary.status != "passed" %>
+          <button class="btn btn-small btn-inset txt-grey">
+            <i class="fas fa-times"></i>
+          </button>
+        <% else %>
+          <button class="btn btn-small btn-inset txt-white">
+            <i class="fas fa-check"></i>
+          </button>
+        <% end %>
       </div>
     <% end %>
   <% end %>

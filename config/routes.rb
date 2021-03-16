@@ -12,12 +12,12 @@ Rails.application.routes.draw do
     # aristutor.co/courses/students/42 here we are on student id:42
 
     # review where update and edit really needed
-    resources :summaries, only: [:create, :edit, :update]
+    resources :summaries, only: [:new, :create, :edit, :update]
     # aristutor.co/courses/:courses_id/summary/:id/edit
 
   end
 
-  resources :summaries, only: [:index, :show, :edit, :update] do
+  resources :summaries, only: [:show] do
     # aristutor.co/summaries/54 here we are on summary id:54
     # aristutor.co/summaries/55/edit here we are on summary id:55
     member do

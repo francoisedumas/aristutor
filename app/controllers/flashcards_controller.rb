@@ -24,6 +24,7 @@ class FlashcardsController < ApplicationController
       # From the global array sample a word or a mistake
       @flashcard = all_flashcards_not_passed.sample
     else
+      @summary.update(status: 'passed')
       redirect_to success_summary_flashcards_path
     end
   end
@@ -52,5 +53,7 @@ class FlashcardsController < ApplicationController
   end
 
   def success
+    id = params['summary_id'].split('/')[0]
+    @summary = Summary.find(id)
   end
 end

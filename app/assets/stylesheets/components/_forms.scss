@@ -18,7 +18,33 @@ textarea {
   border-radius:15px;
 }
 
-input:focus {
+.input-title {
+  font-weight: 600;
+  font-size: 12px;
+  color: $dark-grey;
+  text-align: left;
+  padding-top: 10px;
+}
+
+.input-mistakes-box {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+
+  &-wrong {
+    border: 1px solid $wrong-red;
+    color: $wrong-red;
+    margin-right: 5px;
+  }
+
+  &-correct {
+    border: 1px solid $correct-green;
+    color: $correct-green;
+    margin-left: 5px;
+  }
+}
+
+input:focus, textarea:focus, .input-title:focus, .input-mistakes-box:focus {
   border:none;
   outline:none;
 }
@@ -41,7 +67,7 @@ input:focus {
   color: $grey;
 }
 
-/* Search forms */
+// -------------------- Search forms --------------------
 
 .form-search {
   display:flex;
