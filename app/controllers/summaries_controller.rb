@@ -35,7 +35,24 @@ class SummariesController < ApplicationController
   private
 
   def summary_params
-    params.require(:summary).permit(:title, :overview, abyme_attributes)
+    # translate = translate()
+    # words = params['words']['post'].split(',')
+    # translate = {}
+    # words.each do |word|
+    #   translate[word] = {word: word}
+    # end
+    # new_word = Word.new(translate)
+    # params.require(:summary).permit(:title, :overview, Word.new(translate), abyme_attributes)
+    params.require(:summary).permit(:title, :overview, Word.new(translate), abyme_attributes)
   end
+
+  # def translate
+  #   words = params['words']['post'].split(',')
+  #   client = Google::Cloud::Translate.translation_service
+  #   response = client.translate_text(contents: words, mime_type:"text/plain",source_language_code:"en-US",target_language_code:"fr-FR", parent: "projects/silent-effect-307707")
+  #   translate = {}
+  #   words.each_with_index {|k,i| translate[k] = {word: k, translation: response.translations[i]["translated_text"]}}
+  #   return translate
+  # end
 
 end

@@ -26,6 +26,12 @@ textarea {
   padding-top: 10px;
 }
 
+.mistake-title {
+  display:flex;
+  justify-content: space-between;
+  align-items:center;
+}
+
 .input-mistakes-box {
   display: flex;
   justify-content: space-between;
