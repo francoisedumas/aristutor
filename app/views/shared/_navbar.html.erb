@@ -4,9 +4,9 @@
   <%= link_to courses_path, class: "navbar-footer-icon" do %>
     <%= image_tag ('icon-student.svg') %>
   <% end %>
-  <a class="navbar-footer-icon">
+  <%= link_to teacher_summaries_path, class: "navbar-footer-icon" do %>
     <%= image_tag ('icon-summary.svg') %>
-  </a>
+  <% end %>
   <a class="navbar-footer-icon">
     <%= image_tag ('icon-data.svg') %>
   </a>
