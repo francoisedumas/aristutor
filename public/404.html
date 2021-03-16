@@ -3,52 +3,56 @@
 <head>
   <title>The page you were looking for doesn't exist (404)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
-
+  <link href="https://fonts.googleapis.com/css?family=Encode+Sans+Semi+Condensed:100,200,300,400" rel="stylesheet">
   <style>
-  *{
-    transition: all 0.6s;
-}
+    @import url('https://fonts.googleapis.com/css?family=Montserrat');
+  
+    * {
+      box-sizing: border-box;
+      margin: 0;
+    }
+    body{
+      font-family: "Montserrat";
+    }
+    .container {
+      background-color: #fa9a38;
+      width: 100vw;
+      height: 100vh;
+      display: grid;
+      place-content: center;
+    }
+    h1 {
+      color: white;
+    }
+    .btn {
+      display: inline-block;
+      margin: 2rem auto;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 16px 0px;
+      width: 150px;
+      text-align: center;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 8px 8px 24px #ec991c, -8px -8px 24px #ffdeab;
+    }
 
-html {
-    height: 100%;
-}
+    .txt-orange {
+      color: #ffbd59;
+      background-color: #f1f1f1;
+    }
 
-body{
-    font-family: 'Lato', sans-serif;
-    color: #888;
-    margin: 0;
-}
-
-#main{
-    display: table;
-    width: 100%;
-    height: 100vh;
-    text-align: center;
-}
-
-.fof{
-	  display: table-cell;
-	  vertical-align: middle;
-}
-
-.fof h1{
-	  font-size: 50px;
-	  display: inline-block;
-	  padding-right: 12px;
-	  animation: type .5s alternate infinite;
-}
-
-@keyframes type{
-	  from{box-shadow: inset -3px 0px 0px #888;}
-	  to{box-shadow: inset -3px 0px 0px transparent;}
-}
+    .txt-orange:hover, .txt-orange:active, .txt-orange:focus {
+      color: #fa9a38;
+    }
+    
   </style>
 </head>
 
-<body class="rails-default-error-page">
-  <!-- This file lives in public/404.html -->
-  <div id="main">
-    <div class="fof">
-          <h1>Error 404</h1>
-    </div>
-</div>
+<body class="loading">
+  <div class="container">
+    <h1>404 - Page not found</h1>
+    <a href="www.aristutor.co" class="btn txt-orange">Back to Aristutor</a>
+  </div>
+</body>
+

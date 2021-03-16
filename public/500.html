@@ -25,28 +25,26 @@
       color: white;
     }
     .btn {
+      display: inline-block;
+      margin: 2rem auto;
       font-size: 14px;
       font-weight: 700;
       padding: 16px 0px;
       width: 150px;
       text-align: center;
       border-radius: 50px;
-      box-shadow: $white-shadow;
+      text-decoration: none;
+      box-shadow: 8px 8px 24px #ec991c, -8px -8px 24px #ffdeab;
     }
 
-  i {
-      font-size: 10px;
+    .txt-orange {
+      color: #ffbd59;
+      background-color: #f1f1f1;
     }
-.txt-orange {
-  color: $primary-orange;
-  background-color: $background-grey;
-  &:hover,
-  &:active,
-  &:focus {
-    color: $dark-orange;
-    box-shadow: $white-shadow;
-  }
-}
+
+    .txt-orange:hover, .txt-orange:active, .txt-orange:focus {
+      color: #fa9a38;
+    }
     
   </style>
 </head>
@@ -54,9 +52,7 @@
 <body class="loading">
   <div class="container">
     <h1>HTTP 500 - Internal Server Error</h1>
-    <div class="flex-components">
-      <a href="www.aristutor.co" class="btn txt-orange">Back to Aristutor</a>
-    </div>
+    <a href="www.aristutor.co" class="btn txt-orange">Back to Aristutor</a>
   </div>
 </body>
 
