@@ -15,7 +15,6 @@
       <%= button_tag :submit do %>
         <i class="fas fa-search"></i>
       <% end %>
-      <%#= submit_tag "O", class: "btn-search" %>
     <% end %>
 
     <br>
@@ -34,9 +33,12 @@
             <p class="lastname"><%= course.student.last_name %></p>
           </div>
           <div class="card-student-infos">
-            <p class="flashcard">Last summary #<%= course.summaries.count %></p>
-            <p class="summary"><%= course.summaries.last.title %></p>
-            <%#= link_to "course", course_path(course), class: "btn btn-primary" %>
+            <% if course.summaries.last %>
+              <p class="flashcard">Last summary #<%= course.summaries.count %></p>
+              <p class="summary"><%= course.summaries.last.title %></p>
+            <% else %>
+              <p>No summary yet</p>
+            <% end %>
           </div>
         </div>
       <% end %>

@@ -36,7 +36,12 @@
 // ---------- Header ----------
 
 .nav {
+
   .hide {
     width: 26px;
+  }
+
+  &-logo {
+    margin-top: 50px;
   }
 }
