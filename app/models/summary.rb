@@ -3,6 +3,7 @@ class Summary < ApplicationRecord
   
   has_many :words
   accepts_nested_attributes_for :words
+
   has_many :mistakes
   # accepts_nested_attributes_for :mistakes
   abymize :mistakes, permit: [:wrong_content, :correct_content]

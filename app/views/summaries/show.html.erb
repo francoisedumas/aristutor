@@ -10,14 +10,27 @@
       <i class="fas fa-pen"></i>
     <% end %>
   </div>
-
-  <%# Body with overview, vocabulary box and mistakes box %>
+  
+  <%# Overview %>
   <div class="card-summary">
     <div class="card-summary-infos">
       <p class="summary">Overview</p>
       <p class="flashcard"><%= @summary.overview %></p>
     </div>
   </div>
+
+  <%# Vocabulary box %>
+  <div class="card-summary">
+    <div class="card-summary-infos">
+      <p class="summary">Vocabulary box</p>
+      <p class="flashcard"><%= @summary.words %></p>
+      <% @summary.words.each do |word| %>
+        <p class="flashcard"><%= word.word %> => <%= word.translation %></p>
+      <% end %>
+    </div>
+  </div>
+
+  <%# Mistakes box %>
   <div class="card-summary">
     <div class="card-summary-infos">
       <p class="summary">Mistakes box</p>
@@ -27,7 +40,7 @@
     </div>
   </div>
 
-  <%# Formulaire Button %>
-  <%= link_to "Send the summary", summary_flashcards_path(@summary), class: 'btn btn-large txt-white' %>
+  <%# Send button %>
+  <%= link_to "Save the summary", summary_flashcards_path(@summary), class: 'btn btn-large txt-white' %>
 
 </div>

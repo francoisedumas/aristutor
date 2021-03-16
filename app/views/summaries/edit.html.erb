@@ -1,19 +1,51 @@
 <div class="main-wrapper">
 
-<%# Header %>
+  <%# Header %>
   <div class="nav">
-    <%= link_to :back, class: "btn btn-small txt-grey", method: :get do %>
-      <i class="fas fa-chevron-left"></i>
-    <% end %>
+    <div class="hide"></div>
     <h2>Edit the summary</h2>
-    <div></div>
+    <div class="hide"></div>
   </div>
 
-<%# Formulaire %>
-  <%= form_for([@course, @summary], url: course_summary_path(course_id: @course&.id || @summary.course_id, id: @summary.id), method: :put) do |f| %>
-    <%= f.text_field :title, placeholder: "Theme", label: false %>
-    <%= f.text_area :overview, placeholder: "Overview", label: false %>
-    <%= f.submit 'Save the summary', :class => 'btn btn-large txt-white' %>
+  <%# Formulaire %>
+  <%= form_for([@course, @summary], url: course_summaries_path(course_id: @course&.id || @summary.course_id), method: :patch) do |f| %>
+  
+    <%# Title %>
+    <div class="input-title">Title
+      <%= f.text_field :title, placeholder: "Type your theme" %>
+    </div>
+
+    <%# Overview %>
+    <div class="input-title">Overview
+      <%= f.text_area :overview, placeholder: "Type an overview of the summary" %>
+    </div>
+
+    <%# Vocabulary box %>
+    <div class="input-title">Vocabulary box
+      <%= text_area(:words, :post, options = { placeholder: "boat, car, scooter" }) %>
+    </div>
+
+    <%# Mistakes box %>
+    <div>
+    <%= f.abyme_for(:mistakes, partial: 'summaries/mistake_fields') do |abyme| %>
+      <div class="input-title mistake-title">
+        <span>Mistakes box</span>
+        <%= add_associated_record( content: "+", html: {class: "btn btn-small txt-white"}) do %>
+          <i class="fas fa-plus"></i>
+        <% end %>
+      </div>
+      <%= abyme.records %>
+      <%= abyme.new_records %>   
+    <% end %>
+    </div>
+
+    <%# Save button %>
+    <div>
+      <%= f.submit 'Save the summary', :class => 'btn btn-large txt-white' %>
+    </div>
+    <%# Added space to get more acces to the save button %>
+    <div class="btn-hidding-space"></div>
+
   <% end %>
 
 </div>
