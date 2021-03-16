@@ -1,0 +1,5 @@
+meta_product_name: "Aristutor"
+meta_title: "Aristutor - Help your student learning"
+meta_description: "With Aristutor your student keep learning after your class thanks to amazing flashcards!"
+meta_image: "logo-aristutor.png" # should exist in `app/assets/images/`
+twitter_account: "@aristutor_account"   # required for Twitter Cards
