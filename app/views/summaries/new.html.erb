@@ -2,7 +2,7 @@
 
   <%# Header %>
   <div class="nav">
-    <%= link_to course_path(@course || @summary.course), class: "btn btn-small txt-grey", method: :get do %>
+    <%= link_to course_path(@course), class: "btn btn-small txt-grey", method: :get do %>
       <i class="fas fa-chevron-left"></i>
     <% end %>
     <h2>New summary</h2>
@@ -11,7 +11,7 @@
 
   <%# Formulaire %>
   <%= form_for([@course, @summary], url: course_summaries_path(course_id: @course&.id || @summary.course_id), method: :post) do |f| %>
-  
+
     <%# Title %>
     <div class="input-title">Title
       <%= f.text_field :title, placeholder: "Type your theme" %>
@@ -37,7 +37,7 @@
         <% end %>
       </div>
       <%= abyme.records %>
-      <%= abyme.new_records %>   
+      <%= abyme.new_records %>
     <% end %>
     </div>
 

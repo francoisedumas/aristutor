@@ -1,13 +1,13 @@
 <div class="main-wrapper">
   <div class="nav">
-    <div></div>
+    <div class="hide"></div>
     <div class="title">
       <div class="logo">
         <span>A</span>
       </div>
       <h2>Edit profile</h2>
     </div>
-    <div></div>
+    <div class="hide"></div>
   </div>
 
 <%= simple_form_for(@teacher) do |f| %>
@@ -20,7 +20,7 @@
                   label: false,
                   input_html: { autocomplete: :off },
                   label_html: { class: "btn btn-small txt-orange" } %>
-        
+
         <div class="fake_input">
           <label  for="teacher_photo" id="fake-input">
             <div class="btn btn-small txt-orange">
@@ -28,9 +28,9 @@
             </div>
             <p>Photo</p>
           </label>
-          
+
         </div>
-        
+
 
 
 
