@@ -6,6 +6,15 @@
   object-fit: cover;
   border-radius: 50%;
   box-shadow: $text-shadow;
+  margin: 1rem auto;
+  margin-bottom: 2rem;
+  img {
+    
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
 }
 
 // ---------- Large avatar for student profile ----------

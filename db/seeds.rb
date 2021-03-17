@@ -24,7 +24,7 @@ john.save!
 
 brice = Teacher.create!(first_name: "Brice", last_name: "Nice", email: "brice@lewagon.com", password: "azerty", about: "English teacher, 4 years of experience")
 file = File.open(Rails.root.join('db/seeds/teacher_images/brice.jpg'))
-john.photo.attach(io: file, filename: 'brice.jpg', content_type: 'image/jpg')
+brice.photo.attach(io: file, filename: 'brice.jpg', content_type: 'image/jpg')
 brice.save!
 puts "Teachers well generated"
 
