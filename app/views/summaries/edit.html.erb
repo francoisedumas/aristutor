@@ -22,21 +22,26 @@
 
     <%# Vocabulary box %>
     <div class="input-title">Vocabulary box
-      <%= text_area(:words, :post, options = { placeholder: "boat, car, scooter" }) %>
+      <%= f.abyme_for(:words, partial: 'summaries/word_fields') do |abyme| %>
+        <%= abyme.records %>
+      <% end %>
+      <%= text_area_tag(:words, nil, options = { placeholder: "Enter new words" }) %>
     </div>
+
+
 
     <%# Mistakes box %>
     <div>
-    <%= f.abyme_for(:mistakes, partial: 'summaries/mistake_fields') do |abyme| %>
-      <div class="input-title mistake-title">
-        <span>Mistakes box</span>
-        <%= add_associated_record( content: "+", html: {class: "btn btn-small txt-white"}) do %>
-          <i class="fas fa-plus"></i>
-        <% end %>
-      </div>
-      <%= abyme.records %>
-      <%= abyme.new_records %>
-    <% end %>
+      <%= f.abyme_for(:mistakes, partial: 'summaries/mistake_fields') do |abyme| %>
+        <div class="input-title mistake-title">
+          <span>Mistakes box</span>
+          <%= add_associated_record( content: "+", html: {class: "btn btn-small txt-white"}) do %>
+            <i class="fas fa-plus"></i>
+          <% end %>
+        </div>
+        <%= abyme.records %>
+        <%= abyme.new_records %>
+      <% end %>
     </div>
 
     <%# Save button %>

@@ -40,6 +40,22 @@ select {
   padding-top: 10px;
 }
 
+.input-words-box {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+
+  &-word {
+    color: $grey;
+    margin-right: 5px;
+  }
+
+  &-translation {
+    color: $dark-grey;
+    margin-left: 5px;
+  }
+}
+
 .mistake-title {
   display:flex;
   justify-content: space-between;

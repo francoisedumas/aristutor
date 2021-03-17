@@ -1,19 +1,18 @@
 <%# Logo %>
 <div class="nav-logo">
   <div class="nav">
-      <div class="hide"></div>
-      <div class="logo">
-        <span>A</span>
-      </div>
-      <div class="hide"></div>
+    <div class="hide"></div>
+    <div class="logo">
+      <span>A</span>
+    </div>
+    <div class="hide"></div>
   </div>
 </div>
 
 <%# Home page content %>
 <div class="main-wrapper flashcard-wrapper">
-  <h1>Welcome to Aristutor</h1>
-  <p>Help your student learning faster</p>
-  <div class="flex-components">
-    <%= link_to "connexion", new_teacher_session_path, class: "btn txt-orange" %>
-  </div>
+  <img src="https://picsum.photos/200/200" class="homepage-img">
+  <h1 class="homepage-title">Welcome to Aristutor</h1>
+  <h2 class="homepage-subtitle">Help your student learning faster!</h2>
+  <%= link_to "Connexion", new_teacher_session_path, class: "btn txt-orange" %>
 </div>
