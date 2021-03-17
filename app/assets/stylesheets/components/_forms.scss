@@ -85,6 +85,10 @@ input:focus, textarea:focus, .input-title:focus, .input-mistakes-box:focus {
   outline:none;
 }
 
+input:focus {
+  color: $dark-grey;
+}
+
 .fake_input {
   font-size: 14px;
   font-weight: 400;

@@ -11,7 +11,7 @@
 
 <%# Home page content %>
 <div class="main-wrapper flashcard-wrapper">
-  <img src="https://picsum.photos/200/200" class="homepage-img">
+  <%= image_tag ('hp-img.png'), class: "homepage-img" %>
   <h1 class="homepage-title">Welcome to Aristutor</h1>
   <h2 class="homepage-subtitle">Help your student learning faster!</h2>
   <%= link_to "Connexion", new_teacher_session_path, class: "btn txt-orange" %>
