@@ -58,7 +58,7 @@ class SummariesController < ApplicationController
     words = params[:words].split(',').map(&:strip)
 
     client   = Google::Cloud::Translate.translation_service
-    response = client.translate_text(contents: words, mime_type:"text/plain",source_language_code:"en-US",target_language_code:"fr-FR", parent: "projects/silent-effect-307707")
+    response = client.translate_text(contents: words, mime_type:"text/plain", source_language_code:"en-US", target_language_code:"fr-FR", parent: "projects/translation-aristutor")
 
     words.each_with_index do |word, index|
       words_params[(new_key_value + index).to_s] = { word: word, translation: response.translations[index]["translated_text"] }
