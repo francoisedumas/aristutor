@@ -69,12 +69,19 @@ michele = Student.create!(first_name: "Michele", last_name: "Rodriguez", phone_n
 file = File.open(Rails.root.join('db/seeds/student_images/michele.jpg'))
 michele.photo.attach(io: file, filename: 'michele.jpg', content_type: 'image/jpg')
 michele.save!
+
+francois = Student.create!(first_name: "Francois", last_name: "Dumas", phone_number: "+33766187954", mother_language: "FR", email: "dumas.francois@laposte.net", password: "azerty")
+file = File.open(Rails.root.join('db/seeds/student_images/francois.jpg'))
+michele.photo.attach(io: file, filename: 'francois.jpg', content_type: 'image/jpg')
+michele.save!
+
 puts "Students well generated"
 
 puts "Generate Course seeds"
 
 course_john_sophie = Course.create!(teacher: john, student: sophie, class_language: "EN")
 course_john_arnaud = Course.create!(teacher: john, student: arnaud, class_language: "EN")
+course_john_francois = Course.create!(teacher: john, student: francois, class_language: "EN")
 course_brice_pedro = Course.create!(teacher: brice, student: pedro, class_language: "EN")
 course_brice_kate = Course.create!(teacher: brice, student: kate, class_language: "EN")
 course_brice_jerome = Course.create!(teacher: brice, student: jerome, class_language: "EN")
@@ -95,6 +102,8 @@ summary_7 = Summary.create!(title: "jobs", course: course_brice_juan)
 summary_8 = Summary.create!(title: "weather", course: course_brice_michele)
 summary_9 = Summary.create!(title: "pets", course: course_john_sophie)
 summary_10 = Summary.create!(title: "food", course: course_john_sophie, status: "passed")
+summary_11 = Summary.create!(title: "vehicles", course: course_john_francois)
+
 puts "Summaries well generated"
 
 puts "Generate Mistakes seeds"
