@@ -10,11 +10,7 @@
     <% end %>
   </div>
 
-  <% if @course.student.photo.attached? %>
-    <%= cl_image_tag @course.student.photo.key, class: "small-avatar" %>
-  <% else %>
-    <p>Missing image</p>
-  <% end %>
+  <%= student_img(@course.student)%>
 
   <h2 class="hp-subtitle"><%= @class_language_name %> student - Bali</h2>
   <div class="cards-students-data">
