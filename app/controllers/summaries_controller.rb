@@ -40,7 +40,6 @@ class SummariesController < ApplicationController
     teacher = Teacher.includes(:courses, :summaries).find(current_teacher.id)
     # Loading the summaries from the given course
     @summaries = teacher.summaries.order('created_at DESC')
-
   end
 
   private
