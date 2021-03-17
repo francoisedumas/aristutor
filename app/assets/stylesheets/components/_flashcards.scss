@@ -1,14 +1,34 @@
-// ---------- Flashcard ----------
+// -------------------- Flashcard background --------------------
 
 .flashcard-wrapper {
   input {
     border-radius: 0px;
     border-bottom: 1px solid $grey;
     box-shadow: $text-shadow;
+    text-align: center;
   }
   .flip-card {
     margin-top: 60px;
   }
+}
+
+// -------------------- Flashcard header --------------------
+
+.counter-flashcard {
+  margin-bottom: 0px !important;
+}
+
+.current-flashcard {
+  font-size: 20px;
+}
+
+.flashcard-title {
+  text-shadow: $text-shadow;
+  font-weight: 700;
+  margin-top: 20px;
+  font-size: 30px;
+  margin-top: 0px;
+  margin-bottom: 10px;
 }
 
 .bar {
@@ -26,15 +46,40 @@
   border-radius: 0.5em;
 }
 
-.current-flashcard {
+// -------------------- Flashcard question --------------------
+
+.flashcard-question {
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.flashcard-instruction {
+  color: $grey;
+  font-size: 14px;
+  font-weight: 600;
+  text-shadow: $text-shadow;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.flashcard-word {
+  color: $dark-grey;
   font-size: 20px;
+  font-weight: 600;
+  text-shadow: $text-shadow;
+  margin-top: 0px;
+  margin-bottom: 10px;
 }
 
-.counter-flashcard {
-  margin-bottom: 0px !important;
+// -------------------- Flashcard answer --------------------
+
+.flashcard-answer {
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
-// ---------- Flashcard return ----------
+
+// -------------------- Flashcard return --------------------
 
 .animate {
   animation: fadeDown .75s ;
