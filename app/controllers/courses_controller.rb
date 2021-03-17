@@ -42,11 +42,11 @@ class CoursesController < ApplicationController
   def create
     @course = Course.new
     @student = Student.invite!(student_params)
-    p @student
     @course.student = @student
     @course.teacher = current_teacher
-    p @course
     if @course.save
+      mail = StudentMailer.with(student: @student).create_confirmation
+      mail.deliver_now
       redirect_to course_path(@course)
     else
       render :new
