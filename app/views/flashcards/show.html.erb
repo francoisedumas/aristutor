@@ -17,7 +17,7 @@
   </p>
 
   <%# Summary title %>
-  <h1><%= @summary.title.capitalize! %></h1>
+  <h1 class="flashcard-title"><%= @summary.title.capitalize! %></h1>
 
   <%# Bar progression %>
   <div class="bar">
@@ -25,24 +25,24 @@
   </div>
 
   <%# Flashcard recto %>
-  <div class="question" id="question" style='display: block;'>
+  <div id="question" style='display: block;'>
 
     <%# Flashcard question %>
-    <div>
+    <div class="flashcard-question">
       <% if @flashcard.is_a? Mistake %>
-        <p>Ecrivez correctement la phrase suivante :</p>
-        <h2><%= @flashcard.wrong_content %> </h2>
+        <p class="flashcard-instruction">Ecrivez correctement la phrase suivante :</p>
+        <p class="flashcard-word"><%= @flashcard.wrong_content %></p>
       <% elsif @flashcard.is_a? Word %>
-        <p>Traduisez le mot suivant</p>
-        <h2><%= @flashcard.word %></h2>
+        <p class="flashcard-instruction">Traduisez le mot suivant</p>
+        <p class="flashcard-word"><%= @flashcard.word %></p>
       <% elsif @flashcard.nil? %>
         <p>Well done</p>
       <% end %>
     </div>
 
     <%# Student answer %>
-    <div>
-      <input type="text" name="answer" id="student-answer" placeholder="Tapez votre réponse">
+    <div class="flashcard-answer">
+      <input type="text" name="answer" id="student-answer" placeholder="Votre réponse">
     </div>
 
     <%# Button flip card %>
@@ -53,14 +53,15 @@
   <%# Flashcard verso %>
   <div class="answer" id="answer" style='display: none;'>
     <p id="student-answer-display"></p>
+
     <%# Flashcard answer %>
-    <div>
+    <div class="flashcard-question">
       <% if @flashcard.is_a? Mistake %>
-        <p>La bonne phrase est :</p>
-        <h2><%= @flashcard.correct_content %> </h2>
+        <p class="flashcard-instruction">La bonne phrase est :</p>
+        <p class="flashcard-word"><%= @flashcard.correct_content %></p>
       <% elsif @flashcard.is_a? Word %>
-        <p>La bonne traduction est :</p>
-        <h2><%= @flashcard.translation %></h2>
+        <p class="flashcard-instruction">La bonne traduction est :</p>
+        <p class="flashcard-word"><%= @flashcard.translation %></p>
       <% elsif @flashcard.nil? %>
         <p>Well done</p>
       <% end %>
@@ -73,13 +74,13 @@
         class: "btn txt-grey",
         method: :patch,
         remote: true %>
-
       <%= link_to "Je sais",
         passed_summary_flashcards_path([@summary, @flashcard.id, @flashcard.class]),
         class: "btn txt-white",
         method: :patch,
         remote: true %>
     </div>
+
   </div>
 
 </div>
