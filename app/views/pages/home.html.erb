@@ -12,7 +12,7 @@
 <%# Home page content %>
 <div class="main-wrapper flashcard-wrapper">
   <%# This image came from https://www.vecteezy.com/, then passed into Illustrator to get a .svg, then into Figma to make changes and export it in .png %>
-  <%= image_tag ('hp-img.png'), class: "homepage-img" %> 
+  <p><%= image_tag ('hp-img.png'), class: "homepage-img" %><P>
   <h1 class="homepage-title">Welcome to Aristutor</h1>
   <h2 class="homepage-subtitle">Help your student learning faster!</h2>
   <%= link_to "Connexion", new_teacher_session_path, class: "btn txt-orange" %>

@@ -12,12 +12,11 @@
   padding-bottom: 100px;
 }
 
-
 .sign-wrapper {
   width: calc(100vw - 8px);
   padding: 20px;
   margin: 0 auto;
-  background:$background-grey;
+  background: $background-grey;
   border-radius: 0 0 50px 50px;
 }
 
@@ -42,7 +41,7 @@
   text-align: left;
   border-radius: 50px;
   background-color: #f1f1f1;
-  box-shadow:$inset-shadow;
+  box-shadow: $inset-shadow;
   border: none;
   margin: 12px auto;
   color: #b3b3bb;
