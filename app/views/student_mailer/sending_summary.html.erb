@@ -1,0 +1,12 @@
+<style>
+  h1 {
+    font-family: sans-serif;
+  }
+</style>
+
+Hello <%= @student.first_name %>,
+
+
+Your teacher, sent you a new set of flashcards.
+
+<%= link_to "Go to your flashcards", "www.aristutor.co/summaries/#{@summary.id}/flashcards" %>

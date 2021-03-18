@@ -2,9 +2,10 @@
 class StudentMailerPreview < ActionMailer::Preview
 
   # Preview this email at http://localhost:3000/rails/mailers/student_mailer/welcome
-  def welcome
-    student = Student.first
-    StudentMailer.welcome(student)
+  def sending_summary
+    student = Student.last
+    summary = Summary.last
+    StudentMailer.sending_summary(student, summary)
   end
 
   def create_confirmation
