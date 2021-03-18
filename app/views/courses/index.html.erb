@@ -23,7 +23,7 @@
     <% @courses.each do |course|%>
       <%= link_to course_path(course), class: "card-student" do %>
         <div>
-          <%= student_img(course.student)%>
+          <%= student_img(course.student, "small-avatar")%>
 
           <div class="card-student-name">
             <p class="firstname"><%= course.student.first_name %></p>
