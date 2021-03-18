@@ -1,4 +1,4 @@
-// Grey main wrapper up to the orange background
+// ---------- Main wrapper ----------
 
 .main-wrapper {
   width: calc(100vw - 8px);
@@ -12,7 +12,8 @@
   padding-bottom: 100px;
 }
 
-//
+// ---------- Sign-in/up wrapper ----------
+
 .sign-wrapper {
   width: calc(100vw - 8px);
   padding: 20px;
@@ -21,43 +22,8 @@
   border-radius: 0 0 50px 50px;
 }
 
+// ---------- Flashcards wrapper ----------
+
 .flashcard-wrapper {
   margin-top: 40px;
-}
-
-.teacher_photo {
-  display: none;
-}
-
-.student_photo {
-  display: none;
-}
-
-.fake_input {
-  display: flex;
-  font-size: 14px;
-  font-weight: 400;
-  padding: 16px;
-  width: fit-content;
-  text-align: left;
-  border-radius: 50px;
-  background-color: #f1f1f1;
-  box-shadow: $inset-shadow;
-  border: none;
-  margin: 12px auto;
-  color: #b3b3bb;
-  align-items: center;
-
-  label {
-    display: flex;
-    align-items: center;
-    margin: 0;
-  }
-  .fa-plus {
-    position: absolute;
-  }
-  p {
-    margin-left: 10px;
-    margin-bottom: 0;
-  }
 }

@@ -1,4 +1,4 @@
-// ---------- Navbar footer ----------
+// ------------------------------ Navbar footer ------------------------------
 
 .navbar-footer {
   display: flex;
@@ -7,7 +7,6 @@
   text-align: center;
   margin: 0 auto;
   padding: 54px 24px 32px 24px;
-
   position: fixed;
   bottom: 0;
   left: 4px;
@@ -27,7 +26,6 @@
     border-radius: 8px;
     background-color: $background-grey;
     box-shadow: $white-shadow;
-
     .img {
       color: $dark-grey;
     }
@@ -36,20 +34,20 @@
     }
   }
 }
+
 .active {
   box-shadow: 1px 3px 1px #ffffff, -6px -6px 15px rgba(193, 193, 193, 0.36);
   img {
     display: none;
   }
   .img-active {
-    display: block!important;
+    display: block !important;
   }
 }
 
-// ---------- Header ----------
+// ------------------------------ Header on all page ------------------------------
 
 .nav {
-
   .hide {
     width: 26px;
   }

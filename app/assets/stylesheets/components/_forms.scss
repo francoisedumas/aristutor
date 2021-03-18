@@ -1,6 +1,7 @@
-// -------------------- Forms --------------------
+// -------------------- Forms selectors --------------------
 
-input, textarea {
+input,
+textarea {
   font-size: 14px;
   font-weight: 400;
   padding: 16px;
@@ -8,7 +9,7 @@ input, textarea {
   text-align: left;
   border-radius: 50px;
   background-color: $background-grey;
-  box-shadow: $inset-shadow ;
+  box-shadow: $inset-shadow;
   appearance: none !important;
   border: none;
   margin: 12px 0;
@@ -16,7 +17,7 @@ input, textarea {
 }
 
 textarea {
-  border-radius:15px;
+  border-radius: 15px;
 }
 
 select {
@@ -32,6 +33,61 @@ select {
   margin: 12px 0;
   color: $grey;
 }
+
+// -------------------- Forms pseudo-class --------------------
+
+input:focus,
+textarea:focus,
+.input-title:focus,
+.input-mistakes-box:focus {
+  border: none;
+  outline: none;
+}
+
+input:focus {
+  color: $dark-grey;
+}
+
+// -------------------- Forms photos --------------------
+
+.teacher_photo {
+  display: none;
+}
+
+.student_photo {
+  display: none;
+}
+
+.fake_input {
+  display: flex;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 16px;
+  width: fit-content;
+  text-align: left;
+  border-radius: 50px;
+  background-color: #f1f1f1;
+  box-shadow: $inset-shadow;
+  border: none;
+  margin: 12px auto;
+  color: #b3b3bb;
+  align-items: center;
+
+  label {
+    display: flex;
+    align-items: center;
+    margin: 0;
+  }
+  .fa-plus {
+    position: absolute;
+  }
+  p {
+    margin-left: 10px;
+    margin-bottom: 0;
+  }
+}
+
+// -------------------- Forms wording --------------------
 
 .input-title {
   font-weight: 600;
@@ -58,9 +114,9 @@ select {
 }
 
 .mistake-title {
-  display:flex;
+  display: flex;
   justify-content: space-between;
-  align-items:center;
+  align-items: center;
 }
 
 .input-mistakes-box {
@@ -79,15 +135,6 @@ select {
     color: $correct-green;
     margin-left: 5px;
   }
-}
-
-input:focus, textarea:focus, .input-title:focus, .input-mistakes-box:focus {
-  border:none;
-  outline:none;
-}
-
-input:focus {
-  color: $dark-grey;
 }
 
 .fake_input {
@@ -111,8 +158,8 @@ input:focus {
 // -------------------- Search forms --------------------
 
 .form-search {
-  display:flex;
-  position:relative;
+  display: flex;
+  position: relative;
   button {
     border: none;
     background: transparent;
@@ -126,9 +173,8 @@ input:focus {
   }
 }
 
-
 .teacher_remember_me {
-  display:none;
+  display: none;
 }
 
 .form-actions {

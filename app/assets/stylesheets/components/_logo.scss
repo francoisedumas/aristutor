@@ -1,3 +1,5 @@
+// ------- Logo -------
+
 .title {
   display: flex;
   align-items: center;
@@ -5,16 +7,16 @@
   flex-direction: column;
 }
 .logo {
-  width:40px;
-  height:40px;
-  background-color:$background-grey;
-  box-shadow:$white-shadow;
-  color:$primary-orange;
-  font-size:24px;
+  width: 40px;
+  height: 40px;
+  background-color: $background-grey;
+  box-shadow: $white-shadow;
+  color: $primary-orange;
+  font-size: 24px;
   font-weight: bold;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius:8px;
-  margin-bottom:12px;
+  border-radius: 8px;
+  margin-bottom: 12px;
 }
