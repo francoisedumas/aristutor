@@ -45,7 +45,7 @@ class CoursesController < ApplicationController
     @course.student = @student
     @course.teacher = current_teacher
     if @course.save
-      mail = StudentMailer.with(student: @student).create_confirmation
+      mail = StudentMailer.create_confirmation(@student)
       mail.deliver_now
       redirect_to course_path(@course)
     else

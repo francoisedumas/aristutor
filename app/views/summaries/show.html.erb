@@ -46,6 +46,10 @@
   </div>
 
   <%# Send button %>
-  <%= link_to "Send the summary", summary_flashcards_path(@summary), class: 'btn btn-large txt-white' %>
+  <% if @summary.status != "passed" %>
+    <%= link_to "Send the summary", summary_flashcards_path(@summary), class: 'btn btn-large txt-white' %>
+  <% else %>
+    <h2 class="homepage-subtitle">Summary already sent</h2>
+  <% end %>
 
 </div>
