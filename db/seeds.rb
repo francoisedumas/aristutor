@@ -23,7 +23,7 @@ file = File.open(Rails.root.join('db/seeds/teacher_images/john.jpg'))
 john.photo.attach(io: file, filename: 'john.jpg', content_type: 'image/jpg')
 john.save!
 
-brice = Teacher.create!(first_name: "Brice", last_name: "Nice", email: "brice@lewagon.com", password: "azerty", about: "English teacher, 4 years of experience")
+brice = Teacher.create!(first_name: "Brice", last_name: "Nice", email: "brice@lewagon.com", password: "azerty", about: "English teacher from Bali, 10 years of experience, love teaching and help my student in their learning path!")
 file = File.open(Rails.root.join('db/seeds/teacher_images/brice.jpg'))
 brice.photo.attach(io: file, filename: 'brice.jpg', content_type: 'image/jpg')
 brice.save!
@@ -80,58 +80,58 @@ puts "Students well generated"
 
 puts "Generate Course seeds"
 
-course_john_sophie = Course.create!(teacher: john, student: sophie, class_language: "EN")
-course_john_arnaud = Course.create!(teacher: john, student: arnaud, class_language: "EN")
+course_brice_arnaud = Course.create!(teacher: john, student: arnaud, class_language: "EN")
 course_brice_francois = Course.create!(teacher: brice, student: francois, class_language: "EN")
-course_brice_pedro = Course.create!(teacher: brice, student: pedro, class_language: "EN")
 course_brice_kate = Course.create!(teacher: brice, student: kate, class_language: "EN")
 course_brice_jerome = Course.create!(teacher: brice, student: jerome, class_language: "EN")
-course_brice_jaime = Course.create!(teacher: brice, student: jaime, class_language: "EN")
 course_brice_juan= Course.create!(teacher: brice, student: juan, class_language: "EN")
+course_brice_jaime = Course.create!(teacher: brice, student: jaime, class_language: "EN")
 course_brice_michele = Course.create!(teacher: brice, student: michele, class_language: "EN")
+course_brice_pedro = Course.create!(teacher: brice, student: pedro, class_language: "EN")
+course_brice_sophie = Course.create!(teacher: john, student: sophie, class_language: "EN")
 puts "Courses well generated"
 
 puts "Generate Summaries seeds"
 
-summary_1 = Summary.create!(title: "vehicles", course: course_john_sophie)
-summary_2 = Summary.create!(title: "pets", course: course_john_arnaud)
+summary_1 = Summary.create!(title: "vehicles", course: course_brice_sophie, status: "passed")
+summary_6 = Summary.create!(title: "geography", course: course_brice_sophie)
+summary_2 = Summary.create!(title: "pets", course: course_brice_arnaud, status: "passed")
 summary_3 = Summary.create!(title: "food", course: course_brice_pedro)
-summary_4 = Summary.create!(title: "travels", course: course_brice_kate)
-summary_5 = Summary.create!(title: "colors", course: course_brice_jerome)
-summary_6 = Summary.create!(title: "geography", course: course_brice_jaime)
-summary_7 = Summary.create!(title: "jobs", course: course_brice_juan)
-summary_8 = Summary.create!(title: "weather", course: course_brice_michele)
-summary_9 = Summary.create!(title: "pets", course: course_john_sophie)
-summary_10 = Summary.create!(title: "food", course: course_john_sophie, status: "passed")
-summary_11 = Summary.create!(title: "vehicles", course: course_brice_francois)
+summary_4 = Summary.create!(title: "travels", course: course_brice_kate, status: "passed")
+summary_5 = Summary.create!(title: "colors", course: course_brice_jaime, status: "passed")
+summary_7 = Summary.create!(title: "jobs", course: course_brice_juan, status: "passed")
+summary_8 = Summary.create!(title: "weather", course: course_brice_michele, status: "passed")
+summary_9 = Summary.create!(title: "pets", course: course_brice_francois, status: "passed")
+summary_10 = Summary.create!(title: "food", course: course_brice_francois, status: "passed")
+summary_11 = Summary.create!(title: "Transportation", course: course_brice_francois)
 
 puts "Summaries well generated"
 
 puts "Generate Mistakes seeds"
 
-mistake_1 = Mistake.create!(wrong_content: "car police" , correct_content: "police car" , status: "created", summary: summary_1)
-mistake_2 = Mistake.create!(wrong_content: "the car red" , correct_content: "the red car" , status: "created", summary: summary_1)
-mistake_3 = Mistake.create!(wrong_content: "truck delivery" , correct_content: "delivery truck" , status: "created", summary: summary_1)
-mistake_4 = Mistake.create!(wrong_content: "a taxi yellow" , correct_content: "a yellow taxi" , status: "created", summary: summary_1)
+mistake_1 = Mistake.create!(wrong_content: "car police" , correct_content: "police car" , status: "passed", summary: summary_1)
+mistake_2 = Mistake.create!(wrong_content: "the car red" , correct_content: "the red car" , status: "created", summary: summary_11)
+mistake_3 = Mistake.create!(wrong_content: "truck delivery" , correct_content: "delivery truck" , status: "created", summary: summary_11)
+mistake_4 = Mistake.create!(wrong_content: "a taxi yellow" , correct_content: "a yellow taxi" , status: "passed", summary: summary_1)
 
-mistake_5 = Mistake.create!(wrong_content: "the butterfly are flying" , correct_content: "the butterflies are flying" , status: "created", summary: summary_2)
-mistake_6 = Mistake.create!(wrong_content: "the dog blue" , correct_content: "the blue dog" , status: "created", summary: summary_2)
+mistake_5 = Mistake.create!(wrong_content: "the butterfly are flying" , correct_content: "the butterflies are flying" , status: "passed", summary: summary_2)
+mistake_6 = Mistake.create!(wrong_content: "the dog blue" , correct_content: "the blue dog" , status: "passed", summary: summary_2)
 
 mistake_7 = Mistake.create!(wrong_content: "fries french" , correct_content: "french fries" , status: "passed", summary: summary_3)
 
-mistake_8 = Mistake.create!(wrong_content: "tower eiffel" , correct_content: "eiffel tower" , status: "failed", summary: summary_4)
+mistake_8 = Mistake.create!(wrong_content: "tower eiffel" , correct_content: "eiffel tower" , status: "passed", summary: summary_4)
 
-mistake_9 = Mistake.create!(wrong_content: "yelow" , correct_content: "yellow" , status: "failed", summary: summary_5)
+mistake_9 = Mistake.create!(wrong_content: "yelow" , correct_content: "yellow" , status: "passed", summary: summary_5)
 
 mistake_10 = Mistake.create!(wrong_content: "the ocean pacific" , correct_content: "the pacific ocean" , status: "failed", summary: summary_6)
 mistake_11 = Mistake.create!(wrong_content: "valley of death" , correct_content: "death valley" , status: "failed", summary: summary_6)
 
-mistake_12 = Mistake.create!(wrong_content: "haircutter" , correct_content: "hairdresser" , status: "failed", summary: summary_7)
+mistake_12 = Mistake.create!(wrong_content: "haircutter" , correct_content: "hairdresser" , status: "passed", summary: summary_7)
 
-mistake_13 = Mistake.create!(wrong_content: "tornad" , correct_content: "tornado" , status: "failed", summary: summary_8)
+mistake_13 = Mistake.create!(wrong_content: "tornad" , correct_content: "tornado" , status: "passed", summary: summary_8)
 
-mistake_14 = Mistake.create!(wrong_content: "the butterfly are flying" , correct_content: "the butterflies are flying" , status: "created", summary: summary_9)
-mistake_15 = Mistake.create!(wrong_content: "the dog blue" , correct_content: "the blue dog" , status: "created", summary: summary_9)
+mistake_14 = Mistake.create!(wrong_content: "the butterfly are flying" , correct_content: "the butterflies are flying" , status: "passed", summary: summary_9)
+mistake_15 = Mistake.create!(wrong_content: "the dog blue" , correct_content: "the blue dog" , status: "passed", summary: summary_9)
 
 mistake_16 = Mistake.create!(wrong_content: "fries french" , correct_content: "french fries" , status: "passed", summary: summary_10)
 
@@ -139,8 +139,8 @@ puts "Mistakes well generated"
 
 puts "Generate Words seeds"
 
-word_1 = Word.create!(word: "car" , translation: "voiture" , status: "created", summary: summary_1)
-word_2 = Word.create!(word: "boat" , translation: "bateau" , status: "created", summary: summary_1)
-word_3 = Word.create!(word: "truck" , translation: "camion" , status: "created", summary: summary_1)
+word_1 = Word.create!(word: "car" , translation: "voiture" , status: "created", summary: summary_11)
+word_2 = Word.create!(word: "boat" , translation: "bateau" , status: "created", summary: summary_11)
+word_3 = Word.create!(word: "truck" , translation: "camion" , status: "passed", summary: summary_1)
 
 puts "Words well generated"
