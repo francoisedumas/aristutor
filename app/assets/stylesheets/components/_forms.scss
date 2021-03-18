@@ -8,7 +8,8 @@ input, textarea {
   text-align: left;
   border-radius: 50px;
   background-color: $background-grey;
-  box-shadow: $inset-shadow;
+  box-shadow: $inset-shadow ;
+  appearance: none !important;
   border: none;
   margin: 12px 0;
   color: $grey;
