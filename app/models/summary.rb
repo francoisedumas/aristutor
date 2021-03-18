@@ -1,6 +1,6 @@
 class Summary < ApplicationRecord
   include Abyme::Model
-  
+
   has_many :words
   # accepts_nested_attributes_for :words
   abymize :words, permit: [:word, :translation]
