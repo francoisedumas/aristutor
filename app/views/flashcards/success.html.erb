@@ -1,24 +1,26 @@
 <%# Logo %>
-<div class="nav-logo">
-  <div class="nav">
-      <div class="hide"></div>
-      <div class="logo">
-        <span>A</span>
-      </div>
-      <div class="hide"></div>
+<%= link_to root_path, method: :get  do %>
+  <div class="nav-logo">
+    <div class="nav">
+        <div class="hide"></div>
+        <div class="logo">
+          <span>A</span>
+        </div>
+        <div class="hide"></div>
+    </div>
   </div>
-</div>
+<% end %>
 
 <div class="main-wrapper flashcard-wrapper">
-  
+
   <%# Bar progression %>
   <div class="bar">
     <div class="percentage" style="width: 100%"></div>
   </div>
-  
+
   <%# Summary title %>
   <h2 class="flashcard-completed"><span class=flashcard-completed-title><%= @summary.title %></span> summary completed!</h2>
-  
+
   <%# Message %>
   <div class="fancy_title">
     <h1 class="bounce flashcard-completed-message">
@@ -35,22 +37,22 @@
     </h1>
     <h1 class="bounce flashcard-completed-message">
       <span>&nbsp;</span>
-    </h1> 
+    </h1>
     <h1 class="bounce flashcard-completed-message">
       <span>D</span>
-    </h1> 
+    </h1>
     <h1 class="bounce flashcard-completed-message">
       <span>O</span>
-    </h1> 
+    </h1>
     <h1 class="bounce flashcard-completed-message">
       <span>N</span>
-    </h1> 
+    </h1>
     <h1 class="bounce flashcard-completed-message">
       <span>E</span>
-    </h1> 
+    </h1>
     <h1 class="bounce flashcard-completed-message">
       <span>!</span>
-    </h1> 
+    </h1>
   </div>
 </div>
 
