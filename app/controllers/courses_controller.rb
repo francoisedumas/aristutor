@@ -53,9 +53,14 @@ class CoursesController < ApplicationController
     end
   end
 
+  def edit
+    @course = Course.find(params[:id])
+    @student = @course.student
+  end
+
   private
 
   def student_params
-    params.require(:student).permit(:first_name, :last_name, :phone_number, :mother_language, :email)
+    params.require(:student).permit(:first_name, :last_name, :phone_number, :mother_language, :email, :photo)
   end
 end

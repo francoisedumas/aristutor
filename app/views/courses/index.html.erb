@@ -23,11 +23,8 @@
     <% @courses.each do |course|%>
       <%= link_to course_path(course), class: "card-student" do %>
         <div>
-          <% if course.student.photo.attached? %>
-            <%= cl_image_tag course.student.photo.key, class:'small-avatar' %>
-          <% else %>
-            <p>Missing image</p>
-          <% end %>
+          <%= student_img(course.student, "small-avatar")%>
+
           <div class="card-student-name">
             <p class="firstname"><%= course.student.first_name %></p>
             <p class="lastname"><%= course.student.last_name %></p>

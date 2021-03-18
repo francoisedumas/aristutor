@@ -1,0 +1,39 @@
+<div class="main-wrapper">
+  <div class="nav">
+    <div></div>
+    <div class="title">
+      <div class="logo">
+        <span>A</span>
+      </div>
+      <h2>Edit profile</h2>
+    </div>
+    <div></div>
+  </div>
+
+<%= simple_form_for([@course, @student]) do |f| %>
+  <%= f.input :first_name, placeholder: "First name", label: false %>
+  <%= f.input :last_name, placeholder: "Last name", label: false %>
+  <%= f.input :photo,
+                  as: :file,
+                  required: false,
+                  label: false,
+                  input_html: { autocomplete: :off },
+                  label_html: { class: "btn btn-small txt-orange" } %>
+        
+        <div class="fake_input">
+          <label  for="student_photo" id="fake-input">
+            <div class="btn btn-small txt-orange">
+              <i class="fas fa-plus "></i>
+            </div>
+            <p>Photo</p>
+          </label>
+          
+        </div>
+        
+
+
+
+  <%= f.submit 'Edit profile', :class => 'btn txt-orange' %>
+<% end %>
+
+</div>

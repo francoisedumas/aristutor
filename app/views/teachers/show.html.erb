@@ -11,11 +11,8 @@
     <% end %>
   </div>
 
-  <% if current_teacher.photo.attached? %>
-      <%= cl_image_tag current_teacher.photo.key, class: "small-avatar" %>
-    <% else %>
-      <p>Missing image</p>
-  <% end %>
+  
+  <%= teacher_img(current_teacher)%>
 
   <div class="card-summary">
     <div class="card-summary-infos">
