@@ -55,8 +55,8 @@
   </div>
 
   <%# ---------------------- Flaschcard verso ---------------------- %>
-  <div class="answer" id="answer" style='display: none'>
-    <p id="student-answer-display"></p>
+  <div id="answer" style='display: none'>
+    <p id="student-answer-display" class="flashcard-answer-verso"></p>
 
     <%# Flashcard answer %>
     <div class="flashcard-question">
@@ -72,13 +72,13 @@
     </div>
 
     <%# Button know / didn't know %>
-    <div class="flex-components-h">
-      <%= link_to "Je ne sais pas",
+    <div class="choice-card">
+      <%= link_to "Je l'ignorais",
         failed_summary_flashcards_path([@summary, @flashcard.id, @flashcard.class]),
         class: "btn txt-grey",
         method: :patch,
         remote: true %>
-      <%= link_to "Je sais",
+      <%= link_to "Je le savais",
         passed_summary_flashcards_path([@summary, @flashcard.id, @flashcard.class]),
         class: "btn txt-white",
         method: :patch,
