@@ -103,7 +103,7 @@ summary_7 = Summary.create!(title: "jobs", course: course_brice_juan)
 summary_8 = Summary.create!(title: "weather", course: course_brice_michele)
 summary_9 = Summary.create!(title: "pets", course: course_john_sophie)
 summary_10 = Summary.create!(title: "food", course: course_john_sophie, status: "passed")
-summary_11 = Summary.create!(title: "vehicles", course: course_john_francois)
+summary_11 = Summary.create!(title: "vehicles", course: course_brice_francois)
 
 puts "Summaries well generated"
 
