@@ -7,8 +7,11 @@
       <%= image_tag ('icon-active-student.svg'),class: 'img-active' %>
     </div>
   <% end %>
-  <%= link_to teacher_summaries_path, class: "navbar-footer-icon" do %>
-    <%= image_tag ('icon-summary.svg') %>
+  <%= link_to teacher_summaries_path do %>
+    <div class= "navbar-footer-icon <%= current_class?(teacher_summaries_path)%>">
+      <%= image_tag ('icon-summary.svg') %>
+      <%= image_tag ('icon-active-summary.svg'),class: 'img-active' %>
+    </div>
   <% end %>
   <a class="navbar-footer-icon">
     <%= image_tag ('icon-data.svg') %>
