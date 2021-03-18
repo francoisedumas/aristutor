@@ -81,7 +81,7 @@ puts "Generate Course seeds"
 
 course_john_sophie = Course.create!(teacher: john, student: sophie, class_language: "EN")
 course_john_arnaud = Course.create!(teacher: john, student: arnaud, class_language: "EN")
-course_john_francois = Course.create!(teacher: john, student: francois, class_language: "EN")
+course_brice_francois = Course.create!(teacher: brice, student: francois, class_language: "EN")
 course_brice_pedro = Course.create!(teacher: brice, student: pedro, class_language: "EN")
 course_brice_kate = Course.create!(teacher: brice, student: kate, class_language: "EN")
 course_brice_jerome = Course.create!(teacher: brice, student: jerome, class_language: "EN")
