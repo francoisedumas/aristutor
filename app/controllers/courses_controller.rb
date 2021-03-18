@@ -42,10 +42,8 @@ class CoursesController < ApplicationController
   def create
     @course = Course.new
     @student = Student.invite!(student_params)
-    p @student
     @course.student = @student
     @course.teacher = current_teacher
-    p @course
     if @course.save
       redirect_to course_path(@course)
     else
