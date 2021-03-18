@@ -22,9 +22,9 @@ file = File.open(Rails.root.join('db/seeds/teacher_images/john.jpg'))
 john.photo.attach(io: file, filename: 'john.jpg', content_type: 'image/jpg')
 john.save!
 
-brice = Teacher.create!(first_name: "Brice", last_name: "Nice", email: "brice@lewagon.com", password: "azerty", about: "English teacher, 4 years of experience")
-file = File.open(Rails.root.join('db/seeds/teacher_images/brice.jpg'))
-john.photo.attach(io: file, filename: 'brice.jpg', content_type: 'image/jpg')
+brice = Teacher.create!(first_name: "Brice", last_name: "De Nice", email: "brice@lewagon.com", password: "azerty", about: "English teacher, 4 years of experience")
+file = File.open(Rails.root.join('db/seeds/teacher_images/françois.jpg'))
+brice.photo.attach(io: file, filename: 'françois.jpg', content_type: 'image/jpg')
 brice.save!
 puts "Teachers well generated"
 
@@ -45,12 +45,12 @@ file = File.open(Rails.root.join('db/seeds/student_images/pedro.jpg'))
 pedro.photo.attach(io: file, filename: 'pedro.jpg', content_type: 'image/jpg')
 pedro.save!
 
-kate = Student.create!(first_name: "Kate", last_name: "Martin", phone_number: "+33642424241", mother_language: "FR", email: "kate@lewagon.com", password: "azerty")
+kate = Student.create!(first_name: "Kate", last_name: "Robins", phone_number: "+33642424241", mother_language: "FR", email: "kate@lewagon.com", password: "azerty")
 file = File.open(Rails.root.join('db/seeds/student_images/kate.jpg'))
 kate.photo.attach(io: file, filename: 'kate.jpg', content_type: 'image/jpg')
 kate.save!
 
-jerome = Student.create!(first_name: "Jerome", last_name: "Daniel", phone_number: "+33742424240", mother_language: "FR", email: "jerome@lewagon.com", password: "azerty")
+jerome = Student.create!(first_name: "Jerome", last_name: "La Roche", phone_number: "+33742424240", mother_language: "FR", email: "jerome@lewagon.com", password: "azerty")
 file = File.open(Rails.root.join('db/seeds/student_images/jerome.jpg'))
 jerome.photo.attach(io: file, filename: 'jerome.jpg', content_type: 'image/jpg')
 jerome.save!
@@ -70,39 +70,44 @@ file = File.open(Rails.root.join('db/seeds/student_images/michele.jpg'))
 michele.photo.attach(io: file, filename: 'michele.jpg', content_type: 'image/jpg')
 michele.save!
 
-francois = Student.create!(first_name: "Francois", last_name: "Dumas", phone_number: "+33766187954", mother_language: "FR", email: "dumas.francois@laposte.net", password: "azerty")
-file = File.open(Rails.root.join('db/seeds/student_images/francois.jpg'))
-michele.photo.attach(io: file, filename: 'francois.jpg', content_type: 'image/jpg')
-michele.save!
+yoann = Student.create!(first_name: "Yoann", last_name: "Madec", phone_number: "+339642424242", mother_language: "FR", email: "yoann@lewagon.com", password: "azerty")
+file = File.open(Rails.root.join('db/seeds/student_images/yoann.jpg'))
+yoann.photo.attach(io: file, filename: 'yoann.jpg', content_type: 'image/jpg')
+yoann.save!
 
+sammy = Student.create!(first_name: "Sammy", last_name: "Vargas", phone_number: "+3485542424242", mother_language: "ES", email: "sammy@lewagon.com", password: "azerty")
+file = File.open(Rails.root.join('db/seeds/student_images/sammy.jpg'))
+sammy.photo.attach(io: file, filename: 'sammy.jpg', content_type: 'image/jpg')
+sammy.save!
 puts "Students well generated"
 
 puts "Generate Course seeds"
 
 course_john_sophie = Course.create!(teacher: john, student: sophie, class_language: "EN")
 course_john_arnaud = Course.create!(teacher: john, student: arnaud, class_language: "EN")
-course_john_francois = Course.create!(teacher: john, student: francois, class_language: "EN")
 course_brice_pedro = Course.create!(teacher: brice, student: pedro, class_language: "EN")
 course_brice_kate = Course.create!(teacher: brice, student: kate, class_language: "EN")
 course_brice_jerome = Course.create!(teacher: brice, student: jerome, class_language: "EN")
 course_brice_jaime = Course.create!(teacher: brice, student: jaime, class_language: "EN")
 course_brice_juan= Course.create!(teacher: brice, student: juan, class_language: "EN")
 course_brice_michele = Course.create!(teacher: brice, student: michele, class_language: "EN")
+course_brice_yoann = Course.create!(teacher: brice, student: yoann, class_language: "EN")
+course_brice_sammy = Course.create!(teacher: brice, student: sammy, class_language: "EN")
 puts "Courses well generated"
 
 puts "Generate Summaries seeds"
 
 summary_1 = Summary.create!(title: "vehicles", course: course_john_sophie)
 summary_2 = Summary.create!(title: "pets", course: course_john_arnaud)
+
 summary_3 = Summary.create!(title: "food", course: course_brice_pedro)
 summary_4 = Summary.create!(title: "travels", course: course_brice_kate)
 summary_5 = Summary.create!(title: "colors", course: course_brice_jerome)
 summary_6 = Summary.create!(title: "geography", course: course_brice_jaime)
 summary_7 = Summary.create!(title: "jobs", course: course_brice_juan)
 summary_8 = Summary.create!(title: "weather", course: course_brice_michele)
-summary_9 = Summary.create!(title: "pets", course: course_john_sophie)
-summary_10 = Summary.create!(title: "food", course: course_john_sophie, status: "passed")
-summary_11 = Summary.create!(title: "vehicles", course: course_john_francois)
+summary_9 = Summary.create!(title: "pets", course: course_brice_yoann)
+summary_10 = Summary.create!(title: "food", course: course_brice_sammy, status: "passed")
 
 puts "Summaries well generated"
 
