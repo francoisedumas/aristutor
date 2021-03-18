@@ -14,9 +14,13 @@ class StudentMailer < ApplicationMailer
     )
   end
 
-  def welcome(student)
+  def sending_summary(student, summary)
     @student = student
+    @summary = summary
 
-    mail to: student.email, subject: "Welcome to Aristutor"
+    mail(
+      to:       @student.email,
+      subject:  "You received a new summary!"
+    )
   end
 end

@@ -42,6 +42,15 @@ class SummariesController < ApplicationController
     @summaries = teacher.summaries.order('created_at DESC')
   end
 
+  def send_flashcards
+    summary = Summary.find(params[:id])
+    student = summary.course.student
+    mail = StudentMailer.sending_summary(student, summary)
+    mail.deliver_now
+    summary.update(status: "sent")
+    redirect_to course_path(summary.course), notice: "Summary sent"
+  end
+
   private
 
   def summary_params

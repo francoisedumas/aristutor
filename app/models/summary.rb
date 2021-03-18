@@ -12,4 +12,7 @@ class Summary < ApplicationRecord
   belongs_to :course
 
   validates :title, presence: true
+
+  validates :status, inclusion: { in: ["created", "sent", "passed"] }
+
 end
