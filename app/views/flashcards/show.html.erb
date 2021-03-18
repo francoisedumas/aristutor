@@ -1,3 +1,5 @@
+<%# ---------------------- Flaschard background ---------------------- %>
+
 <%# Logo %>
 <div class="nav-logo">
   <div class="nav">
@@ -8,6 +10,8 @@
       <div class="hide"></div>
   </div>
 </div>
+
+<%# ---------------------- Flaschcard body (grey) ---------------------- %>
 
 <div class="main-wrapper flashcard-wrapper" id="flashcard-wrapper">
 
@@ -24,8 +28,8 @@
     <div class="percentage" style="width: <%= @completion %>%"></div>
   </div>
 
-  <%# Flashcard recto %>
-  <div id="question" style='display: block;'>
+  <%# ---------------------- Flaschcard recto ---------------------- %>
+  <div id="question" style='display: block'>
 
     <%# Flashcard question %>
     <div class="flashcard-question">
@@ -50,14 +54,14 @@
 
   </div>
 
-  <%# Flashcard verso %>
-  <div class="answer" id="answer" style='display: none;'>
+  <%# ---------------------- Flaschcard verso ---------------------- %>
+  <div class="answer" id="answer" style='display: none'>
     <p id="student-answer-display"></p>
 
     <%# Flashcard answer %>
     <div class="flashcard-question">
       <% if @flashcard.is_a? Mistake %>
-        <p class="flashcard-instruction">La bonne phrase est :</p>
+        <p class="flashcard-instruction">La phrase correcte est :</p>
         <p class="flashcard-word"><%= @flashcard.correct_content %></p>
       <% elsif @flashcard.is_a? Word %>
         <p class="flashcard-instruction">La bonne traduction est :</p>
