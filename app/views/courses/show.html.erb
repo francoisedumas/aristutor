@@ -1,6 +1,6 @@
 <div class="main-wrapper">
 
-  <div class="d-flex justify-content-between flex-wrap">
+  <div class="nav">
     <div class="hide"></div>
 
     <h2><%= @course.student.first_name %> <%= @course.student.last_name %></h2>
@@ -12,14 +12,14 @@
 
   <%= student_img(@course.student, "large-avatar")%>
 
-  <h2 class="hp-subtitle"><%= @class_language_name %> student - Bali</h2>
+  <h2 class="student-information"><%= @class_language_name %> student - Bali</h2>
   <div class="cards-students-data">
     <div class="cards-students-data-figures">
-      <h2 class="hp-subtitle">Summaries</h2>
+      <p>Summaries</p>
       <h1> <%= @number_of_summary %></h1>
     </div>
     <div class="cards-students-data-figures">
-      <h2 class="hp-subtitle">Completion</h2>
+      <p>Completion</p>
       <!-- here we use a helper number_to_percentage inherited from ActionView to show as % -->
       <h1> <%= number_to_percentage(@completion, precision: 0) %> </h1>
     </div>
