@@ -23,7 +23,7 @@ file = File.open(Rails.root.join('db/seeds/teacher_images/john.jpg'))
 john.photo.attach(io: file, filename: 'john.jpg', content_type: 'image/jpg')
 john.save!
 
-brice = Teacher.create!(first_name: "Brice", last_name: "Nice", email: "brice@lewagon.com", password: "azerty", about: "English teacher from Bali, 10 years of experience, love teaching and help my student in their learning path!")
+brice = Teacher.create!(first_name: "Brice", last_name: "Nice", email: "brice@lewagon.com", password: "azerty", about: "English teacher from Bali, 10 years of experience, love teaching and helping my student in their learning path!")
 file = File.open(Rails.root.join('db/seeds/teacher_images/brice.jpg'))
 brice.photo.attach(io: file, filename: 'brice.jpg', content_type: 'image/jpg')
 brice.save!
@@ -80,7 +80,7 @@ puts "Students well generated"
 
 puts "Generate Course seeds"
 
-course_brice_arnaud = Course.create!(teacher: john, student: arnaud, class_language: "EN")
+course_brice_arnaud = Course.create!(teacher: brice, student: arnaud, class_language: "EN")
 course_brice_francois = Course.create!(teacher: brice, student: francois, class_language: "EN")
 course_brice_kate = Course.create!(teacher: brice, student: kate, class_language: "EN")
 course_brice_jerome = Course.create!(teacher: brice, student: jerome, class_language: "EN")
@@ -88,7 +88,7 @@ course_brice_juan= Course.create!(teacher: brice, student: juan, class_language:
 course_brice_jaime = Course.create!(teacher: brice, student: jaime, class_language: "EN")
 course_brice_michele = Course.create!(teacher: brice, student: michele, class_language: "EN")
 course_brice_pedro = Course.create!(teacher: brice, student: pedro, class_language: "EN")
-course_brice_sophie = Course.create!(teacher: john, student: sophie, class_language: "EN")
+course_brice_sophie = Course.create!(teacher: brice, student: sophie, class_language: "EN")
 puts "Courses well generated"
 
 puts "Generate Summaries seeds"
