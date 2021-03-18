@@ -20,7 +20,7 @@ class StudentMailer < ApplicationMailer
 
     mail(
       to:       @student.email,
-      subject:  "You receive a new summary!"
+      subject:  "You received a new summary!"
     )
   end
 end

@@ -23,7 +23,7 @@ Rails.application.routes.draw do
     # aristutor.co/summaries/54 here we are on summary id:54
     # aristutor.co/summaries/55/edit here we are on summary id:55
     member do
-      patch :send_summary # to be reviewed
+      patch :send_flashcards # to be reviewed
     end
     resource :flashcards, only: [:show] do
       member do
