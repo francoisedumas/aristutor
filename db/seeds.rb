@@ -70,7 +70,7 @@ file = File.open(Rails.root.join('db/seeds/student_images/michele.jpg'))
 michele.photo.attach(io: file, filename: 'michele.jpg', content_type: 'image/jpg')
 michele.save!
 
-francois = Student.create!(first_name: "Francois", last_name: "Dumas", phone_number: "+33766187954", mother_language: "FR", email: "dumas.francois@laposte.net", password: "azerty")
+francois = Student.create!(first_name: "Francois", last_name: "Dumas", phone_number: "+33766187954", mother_language: "FR", email: "francois@lewagon.com", password: "azerty")
 file = File.open(Rails.root.join('db/seeds/student_images/francois.jpg'))
 michele.photo.attach(io: file, filename: 'francois.jpg', content_type: 'image/jpg')
 michele.save!

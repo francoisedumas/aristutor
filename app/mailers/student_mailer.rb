@@ -14,9 +14,9 @@ class StudentMailer < ApplicationMailer
     )
   end
 
-  def welcome(student)
-    @student = student
+  # def welcome(student)
+  #   @student = student
 
-    mail to: student.email, subject: "Welcome to Aristutor"
-  end
+  #   mail to: student.email, subject: "Welcome to Aristutor"
+  # end
 end
