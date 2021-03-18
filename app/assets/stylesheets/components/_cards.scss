@@ -32,6 +32,7 @@
 
   p {
     margin: 0;
+    text-transform: capitalize;
   }
 
   &-name {
@@ -63,6 +64,24 @@
   }
 }
 
+.student-information {
+  color: $grey;
+  font-weight: 400;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.cards-students-data {
+  margin-bottom: 20px;
+  &-figures {
+    p {
+      font-size: 12px;
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
+
 // -------------------- Summary cards --------------------
 
 .card-summary {
@@ -79,6 +98,7 @@
 
   p {
     margin: 0;
+    text-transform: capitalize;
   }
 
   &-infos {
