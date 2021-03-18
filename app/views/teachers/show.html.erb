@@ -27,12 +27,12 @@
   <div class="cards-students-data">
     <div class="cards-students-data-figures">
       <h2 class="hp-subtitle">Students</h2>
-      <h1> 3 </h1>
+      <h1><%= @number_of_student %></h1>
     </div>
     <div class="cards-students-data-figures">
       <h2 class="hp-subtitle">Completion</h2>
       <!-- here we use a helper number_to_percentage inherited from ActionView to show as % -->
-      <h1> 33% </h1>
+      <h1><%= number_to_percentage(@completion, precision: 0) %></h1>
     </div>
   </div>
   <br>
