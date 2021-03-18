@@ -10,14 +10,50 @@
 </div>
 
 <div class="main-wrapper flashcard-wrapper">
-  <h1>WELL DONE!</h1>
-  <%# Summary title %>
-  <h1><%= @summary.title.capitalize! %></h1>
+  
   <%# Bar progression %>
   <div class="bar">
     <div class="percentage" style="width: 100%"></div>
   </div>
+  
+  <%# Summary title %>
+  <h2 class="flashcard-completed"><span class=flashcard-completed-title><%= @summary.title %></span> summary completed!</h2>
+  
+  <%# Message %>
+  <div class="fancy_title">
+    <h1 class="bounce flashcard-completed-message">
+      <span>W</span>
+    </h1>
+    <h1 class="bounce flashcard-completed-message">
+      <span>E</span>
+    </h1>
+    <h1 class="bounce flashcard-completed-message">
+      <span>L</span>
+    </h1>
+    <h1 class="bounce flashcard-completed-message">
+      <span>L</span>
+    </h1>
+    <h1 class="bounce flashcard-completed-message">
+      <span>&nbsp;</span>
+    </h1> 
+    <h1 class="bounce flashcard-completed-message">
+      <span>D</span>
+    </h1> 
+    <h1 class="bounce flashcard-completed-message">
+      <span>O</span>
+    </h1> 
+    <h1 class="bounce flashcard-completed-message">
+      <span>N</span>
+    </h1> 
+    <h1 class="bounce flashcard-completed-message">
+      <span>E</span>
+    </h1> 
+    <h1 class="bounce flashcard-completed-message">
+      <span>!</span>
+    </h1> 
+  </div>
 </div>
+
 <script type="module">
   import confetti from "https://cdn.skypack.dev/canvas-confetti";
   confetti();
