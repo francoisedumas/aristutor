@@ -10,6 +10,11 @@
   .flip-card {
     margin-top: 60px;
   }
+  .choice-card {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 // -------------------- Flashcard header --------------------
@@ -78,28 +83,33 @@
   margin-bottom: 10px;
 }
 
+.flashcard-answer-verso {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  text-shadow: $text-shadow;
+}
 
 // -------------------- Flashcard return --------------------
 
 .animate {
-  animation: fadeDown .75s ;
-  animation-timing-function:cubic-bezier(0.4, 0.0, 0.2, 1);
-  animation-fill-mode:forwards;
+  animation: fadeDown 0.75s;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  animation-fill-mode: forwards;
 }
 
 @keyframes fadeDown {
   0% {
-    margin-top:140px;
-    opacity:1;
+    margin-top: 140px;
+    opacity: 1;
   }
 
   50% {
-    margin-top:1000px;
-    opacity:0;
+    margin-top: 1000px;
+    opacity: 0;
   }
 
   100% {
-    margin-top:140px;
-    opacity:1;
+    margin-top: 140px;
+    opacity: 1;
   }
 }
