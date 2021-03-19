@@ -32,6 +32,9 @@
 
   p {
     margin: 0;
+  }
+
+  p::first-letter {
     text-transform: capitalize;
   }
 
@@ -98,6 +101,9 @@
 
   p {
     margin: 0;
+  }
+
+  p::first-letter {
     text-transform: capitalize;
   }
 
