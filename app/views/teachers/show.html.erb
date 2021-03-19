@@ -11,7 +11,7 @@
     <% end %>
   </div>
 
-  
+
   <%= teacher_img(current_teacher)%>
 
   <div class="card-summary">
@@ -23,18 +23,18 @@
   <br>
   <div class="cards-students-data">
     <div class="cards-students-data-figures">
-      <h2 class="hp-subtitle">Students</h2>
+      <p>Students</p>
       <h1><%= @number_of_student %></h1>
     </div>
     <div class="cards-students-data-figures">
-      <h2 class="hp-subtitle">Completion</h2>
+      <p>Completion</p>
       <!-- here we use a helper number_to_percentage inherited from ActionView to show as % -->
       <h1><%= number_to_percentage(@completion, precision: 0) %></h1>
     </div>
   </div>
   <br>
   <div class="flex-components">
-    <%= link_to "log out", destroy_teacher_session_path, method: :delete, class: "btn txt-orange" %>
+    <%= link_to "Log out", destroy_teacher_session_path, method: :delete, class: "btn txt-orange" %>
   </div>
 
 </div>
