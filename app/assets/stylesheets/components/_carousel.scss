@@ -1,0 +1,53 @@
+
+.carousel {
+  justify-content: flex-start;
+  overflow: hidden;
+  padding: 40px 0;
+  position: relative;
+  background-color: $background-grey;
+  width: calc(100vw - 8px);
+  margin: -1px auto;
+}
+
+.carousel > .container {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  transform: translate3d(0, 0, 0);
+  transition: transform 600ms;
+  margin-left: -15px;
+}
+
+.carousel > nav {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  text-align: center;
+  width: calc(100vw - 8px);
+  z-index: 1;
+}
+
+.carousel > nav a {
+  color: #000;
+  font-size: 14px;
+  opacity: .2;
+  text-decoration: none;
+}
+
+.carousel > nav a:hover {
+  opacity: .5;
+}
+
+.carousel > nav a.current {
+  opacity: 1;
+}
+
+.carousel .slide {
+  flex-shrink: 0;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.slide {
+  width: 100vw;
+}
