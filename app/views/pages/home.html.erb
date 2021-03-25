@@ -10,7 +10,7 @@
 </div>
 
 <%# Home page content %>
-<div class="main-wrapper second-wrapper flashcard-wrapper">
+<div class="main-wrapper second-wrapper ">
   <%# This image came from https://www.vecteezy.com/, then passed into Illustrator to get a .svg, then into Figma to make changes and export it in .png %>
   <p><%= image_tag ('hp-img.png'), class: "homepage-img" %></p>
   <h1 class="homepage-title">Welcome to Aristutor</h1>
@@ -40,14 +40,14 @@
     </div>
   </section>
 
-<div class="main-wrapper third-wrapper flashcard-wrapper">
+<div class="main-wrapper third-wrapper ">
 
   <!-- Begin Mailchimp Signup Form -->
-  <div class="flex-components">
-    <div id="mc_embed_signup">
-      <form action="https://aristutor.us1.list-manage.com/subscribe/post?u=6b9c0bde928ba9d2be713476f&amp;id=add204d686" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-          <div id="mc_embed_signup_scroll">
-            <input type="email" class="form-inputs" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Email me when it's ready" required>
+  <div id="mc_embed_signup">
+    <form action="https://aristutor.us1.list-manage.com/subscribe/post?u=6b9c0bde928ba9d2be713476f&amp;id=add204d686" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+        <div id="mc_embed_signup_scroll">
+          <div class="flex-components">
+            <input type="email" class="form-inputs" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Email me when it's ready!" required>
             <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
             <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_6b9c0bde928ba9d2be713476f_add204d686" tabindex="-1" value=""></div>
             <div class="form-actions"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn txt-orange"></div>
