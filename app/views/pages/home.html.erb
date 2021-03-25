@@ -10,11 +10,37 @@
 </div>
 
 <%# Home page content %>
-<div class="main-wrapper flashcard-wrapper">
+<div class="main-wrapper second-wrapper flashcard-wrapper">
   <%# This image came from https://www.vecteezy.com/, then passed into Illustrator to get a .svg, then into Figma to make changes and export it in .png %>
   <p><%= image_tag ('hp-img.png'), class: "homepage-img" %></p>
   <h1 class="homepage-title">Welcome to Aristutor</h1>
   <h2 class="homepage-subtitle">Help your student learning faster!</h2>
+
+</div>
+  <!-- As seen on https://codepen.io/blixt/pen/pgvGdK -->
+  <section class="carousel">
+    <nav></nav>
+    <div class="container">
+      <div class="slide">
+        <h1 class="homepage-title">Quick class summary</h1>
+        <p>Class summary made and shared easily with template.</p>
+      </div>
+      <div class="slide">
+        <h1 class="homepage-title">All summaries in one place</h1>
+        <p>All summaries from all your student in one place for easy access.</p>
+      </div>
+      <div class="slide">
+        <h1 class="homepage-title">Automatic flashcards</h1>
+        <p>Class summary turned into flashcard for student.</p>
+      </div>
+      <div class="slide">
+        <h1 class="homepage-title">Student reminder</h1>
+        <p>Students get reminded if they don't do their flashcards.</p>
+      </div>
+    </div>
+  </section>
+
+<div class="main-wrapper third-wrapper flashcard-wrapper">
 
   <!-- Begin Mailchimp Signup Form -->
   <div class="flex-components">
