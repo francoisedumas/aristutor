@@ -1,4 +1,16 @@
 <div class="input-mistakes-box">
-  <%= f.text_area :wrong_content, class: 'input-mistakes-box-wrong', placeholder: "Type a wrong content" %>
-  <%= f.text_area :correct_content, class: 'input-mistakes-box-correct', placeholder: "Type the correct content" %>
+  <%= f.text_area :wrong_content,
+    class: 'input-mistakes-box-wrong',
+    placeholder: "Type a wrong content" %>
+
+  <%= f.text_area :correct_content,
+    class: 'input-mistakes-box-correct',
+    placeholder: "Type the correct content" %>
+
+  <%= f.hidden_field :_destroy %>
+  <%= remove_associated_record(tag: :span) do %>
+    <span class="text-2xl text-white absolute cursor-pointer"  style="top: 8px; right: 30px;">
+      <i class="far fa-times-circle absolute text-2xl"></i>
+    </span>
+  <% end %>
 </div>
