@@ -11,7 +11,7 @@
     <%= content_tag :div, class: "temp_information", data: {temp: @students} do %>
     <% end %>
 
-    <%= form_tag courses_path, method: :get, class:'form-search search' do  %>
+    <%= form_tag courses_path, method: :get, autocomplete: 'off', class:'form-search search' do  %>
       <%= text_field_tag :query,
         params[:query],
         placeholder: "Find a student"
