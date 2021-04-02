@@ -43,8 +43,6 @@ gem 'pg_search', '~> 2.3.0'
 gem 'abyme'
 gem 'google-cloud-translate'
 
-gem 'mimemagic', '0.3.5', git: 'https://github.com/mimemagicrb/mimemagic', ref: '01f92d8'
-
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
