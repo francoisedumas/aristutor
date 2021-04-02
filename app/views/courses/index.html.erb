@@ -7,7 +7,11 @@
     <% end %>
   </div>
 
-    <%= form_tag courses_path, method: :get, class:'form-search' do  %>
+    <!-- Storing data from search to display it after -->
+    <%= content_tag :div, class: "temp_information", data: {temp: @students} do %>
+    <% end %>
+
+    <%= form_tag courses_path, method: :get, class:'form-search search' do  %>
       <%= text_field_tag :query,
         params[:query],
         placeholder: "Find a student"
@@ -16,6 +20,8 @@
         <i class="fas fa-search"></i>
       <% end %>
     <% end %>
+    <ul class="suggestions">
+    </ul>
 
     <br>
 
