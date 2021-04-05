@@ -14,16 +14,16 @@ const dropDown = () => {
   const searchValue = document.getElementById('query');
   // getting the place to place the answer
   const suggestions = document.querySelector('.suggestions');
-  // getting all the name displayed
-  const keyedValues = document.querySelectorAll('.name');
-
+  // Building an array to temporarly stored students name
+  const studentsArray = [];
 
   function display() {
-    // console.log(this.value);
     const findings = getStudents(this.value, students);
-    const html = findings.map(student => {
+    studentsArray.splice(0, studentsArray.length);
+    const html = findings.map((student, i) => {
       const regex = new RegExp(this.value, 'gi'); // find matching with what user is keying in order to highlight it
-      const studentName = student.first_name.replace(regex, `<span class="hl">${this.value}</span>`) // replace what user is keying by a highlight see first span
+      const studentName = student.first_name.replace(regex, `<span data-index=${i} class="hl">${this.value}</span>`) // replace what user is keying by a highlight see first span
+      studentsArray.push(student.first_name);
       return `
       <li>
         <span class="name">${studentName}</span>
@@ -33,6 +33,7 @@ const dropDown = () => {
     suggestions.innerHTML= '';
     suggestions.innerHTML= html;
     // inserting the new html in the proper place of our html
+    console.log(studentsArray);
   }
 
   if(searchValue.value === ""){
@@ -42,7 +43,13 @@ const dropDown = () => {
     searchValue.addEventListener('keyup', display);
   }
 
-  keyedValues.forEach( keyedValue => keyedValue.addEventListener('click',console.log(keyedValue.textContent)));
+  function getName(e) {
+    const el = e.target.querySelector('.hl');
+    const index = el.dataset.index;
+    console.log(studentsArray[index]);
+  }
+
+  suggestions.addEventListener('click',getName);
 
 }
 
