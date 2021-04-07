@@ -11,19 +11,8 @@ class FlashcardsController < ApplicationController
     all_mistakes_not_passed = @summary.mistakes.select {|mistake| mistake.status != "passed"}
 
     # Creation of a global array with object Word and Mistakes not passed
-    if all_mistakes_not_passed.size == 2
-      all_flashcards_not_passed = [all_mistakes_not_passed.first, all_words_not_passed, all_mistakes_not_passed.last].flatten
-    else
-      if all_words_not_passed.size == 3
-        all_flashcards_not_passed = [all_words_not_passed[1], all_words_not_passed[2], all_words_not_passed[0], all_mistakes_not_passed].flatten
-      elsif all_words_not_passed.size == 2
-        all_flashcards_not_passed = [all_words_not_passed[1], all_words_not_passed[0], all_mistakes_not_passed].flatten
-      else
-        all_flashcards_not_passed = [all_words_not_passed, all_mistakes_not_passed].flatten
-      end
-    end
+    all_flashcards_not_passed = [all_words_not_passed, all_mistakes_not_passed].flatten
 
-    # raise
     # Calculation
     @number_total = total_words + total_mistakes
     number_total_not_passed = all_words_not_passed.size + all_mistakes_not_passed.size
@@ -33,7 +22,7 @@ class FlashcardsController < ApplicationController
     if @number_total_passed < @number_total
 
       # From the global array sample a word or a mistake
-      @flashcard = all_flashcards_not_passed.first
+      @flashcard = all_flashcards_not_passed.sample
     else
       @summary.update(status: 'passed')
       redirect_to success_summary_flashcards_path
