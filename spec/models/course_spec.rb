@@ -1,6 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Course, type: :model do
+  it 'has a valid factory' do
+    expect(FactoryBot.build(:course)).to be_valid
+  end
+
   before do
     # Teacher
     @teacher = FactoryBot.create(:teacher)
@@ -12,36 +16,36 @@ RSpec.describe Course, type: :model do
   end
 
   it "is valid with a teacher, a student and a class language" do
-    course = Course.new(
+    course = FactoryBot.build(
+      :course,
       teacher: @teacher,
-      student: @sophiejambon,
-      class_language: "EN"
+      student: @sophiejambon
     )
     expect(course).to be_valid
   end
 
   it "is invalid without a class language" do
-    course = Course.new(class_language: nil)
+    course = FactoryBot.build(:course, class_language: nil)
     course.valid?
     expect(course.errors[:class_language]).to include("can't be blank")
   end
 
   describe "search course for a student" do
     before do
-      @course = Course.create(
+      @course = FactoryBot.create(
+        :course,
         teacher: @teacher,
-        student: @sophiejambon,
-        class_language: "EN"
+        student: @sophiejambon
       )
-      @course1 = Course.create(
+      @course1 = FactoryBot.create(
+        :course,
         teacher: @teacher,
-        student: @jaimespa,
-        class_language: "EN"
+        student: @jaimespa
       )
-      @course2 = Course.create(
+      @course2 = FactoryBot.create(
+        :course,
         teacher: @teacher,
-        student: @bradjaime,
-        class_language: "EN"
+        student: @bradjaime
       )
     end
 
