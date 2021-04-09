@@ -2,39 +2,13 @@ require 'rails_helper'
 
 RSpec.describe Course, type: :model do
   before do
-    @teacher = Teacher.create(
-      first_name: "John",
-      last_name: "Doe",
-      email: "johnd@lewagon.com",
-      password: "azerty"
-    )
-
-    @sophiejambon = Student.create(
-      first_name: "Sophie",
-      last_name: "Jambon",
-      email: "jambon@lewagon.com",
-      password: "azerty",
-      phone_number: "0101010101",
-      mother_language: "FR"
-    )
-
-    @jaimespa = Student.create(
-      first_name: "Jaime",
-      last_name: "Spa",
-      email: "spa@lewagon.com",
-      password: "azerty",
-      phone_number: "0201010101",
-      mother_language: "FR"
-    )
-
-    @bradjaime = Student.create(
-      first_name: "Brad",
-      last_name: "Jaime",
-      email: "pitt@lewagon.com",
-      password: "azerty",
-      phone_number: "0301010101",
-      mother_language: "FR"
-    )
+    # Teacher
+    @teacher = FactoryBot.create(:teacher)
+    # Students
+    @sophiejambon = FactoryBot.create(:student)
+    # For below students need to pass specific names in order to test PGsearch
+    @jaimespa = FactoryBot.create(:student, first_name: "jaime")
+    @bradjaime = FactoryBot.create(:student, last_name: "jaime")
   end
 
   it "is valid with a teacher, a student and a class language" do
@@ -73,6 +47,7 @@ RSpec.describe Course, type: :model do
 
     context "when a match is found" do
       it "returns students that match the search" do
+        # see specific names passed to student with factory bot
         expect(Course.where(teacher: @teacher).search_by_first_and_last_name("Jaime")).to include(@course1, @course2)
       end
     end
