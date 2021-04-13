@@ -7,7 +7,7 @@ class SummariesController < ApplicationController
 
   def create
     # raise
-    summary_params[:words_attributes] = build_words_params# words_attributes: [:word, :translation, :id] define below
+    summary_params[:words_attributes] = build_words_params # words_attributes: [:word, :translation, :id] define below
     # exp {"0"=>{"word"=>"car", "translation"=>"voiture", "id"=>"70"}, "1"=>{"word"=>"boat", "translation"=>"bateau", "id"=>"71"}}
 
     @summary = Summary.new(summary_params)
@@ -55,7 +55,7 @@ class SummariesController < ApplicationController
   private
 
   def summary_params
-    params.require(:summary).permit(:title, :overview, abyme_attributes, words_attributes: [:word, :translation, :id])
+    params.require(:summary).permit(:title, :overview, abyme_attributes, words_attributes: %i[word translation id])
   end
 
   def build_words_params
@@ -75,11 +75,13 @@ class SummariesController < ApplicationController
     client   = Google::Cloud::Translate.translation_service
 
     # Pass the words to translate
-    response = client.translate_text(contents: words, mime_type:"text/plain", source_language_code:"en-US", target_language_code:"fr-FR", parent: "projects/translation-aristutor")
+    response = client.translate_text(contents: words, mime_type: "text/plain", source_language_code: "en-US",
+                                     target_language_code: "fr-FR", parent: "projects/translation-aristutor")
 
     # creating key-value pairs for the hash
     words.each_with_index do |word, index|
-      words_params[(new_key_value + index).to_s] = { word: word, translation: response.translations[index]["translated_text"] }
+      words_params[(new_key_value + index).to_s] =
+        { word: word, translation: response.translations[index]["translated_text"] }
     end
     # exp {"0"=>{:word=>"boat", :translation=>"bateau"}, "1"=>{:word=>"truck", :translation=>"un camion"}}
 

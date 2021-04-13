@@ -37,4 +37,7 @@ Rails.application.routes.draw do
 
   get '/components', to: 'pages#components'
 
+
+  mount API::Base, at: "/"
+
 end

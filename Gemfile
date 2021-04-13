@@ -41,7 +41,12 @@ gem 'devise_invitable'
 gem 'cloudinary', '~> 1.16.0'
 gem 'pg_search', '~> 2.3.0'
 gem 'abyme'
-gem 'google-cloud-translate'
+# gem 'google-cloud-translate'
+
+# Api gems
+gem 'grape'
+gem 'rack-cors'
+gem 'grape-active_model_serializers'
 
 group :development, :test do
   gem 'pry-byebug'

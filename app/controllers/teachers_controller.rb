@@ -7,7 +7,7 @@ class TeachersController < ApplicationController
     # Sending the summary info
     all_summaries = @teacher.summaries
     number_of_summaries = all_summaries.size
-    all_summaries_passed = all_summaries.select {|summary| summary.status == "passed"}
+    all_summaries_passed = all_summaries.select { |summary| summary.status == "passed" }
     # This enables to get number of summaries done
     # but investigate with a join query (to avoid N+1 query)
     total_summaries_done = all_summaries_passed.size
@@ -24,9 +24,9 @@ class TeachersController < ApplicationController
     redirect_to teacher_path(@teacher)
   end
 
-    private
+  private
 
-    def teacher_params
-      params.require(:teacher).permit(:first_name, :last_name, :about, :photo)
-    end
+  def teacher_params
+    params.require(:teacher).permit(:first_name, :last_name, :about, :photo)
+  end
 end
