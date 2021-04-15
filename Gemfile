@@ -44,9 +44,11 @@ gem 'abyme'
 # gem 'google-cloud-translate'
 
 # Api gems
-gem 'grape'
+gem 'jsonapi-serializer'
+
 gem 'rack-cors'
-gem 'grape-active_model_serializers'
+# gem 'grape-active_model_serializers'
+# gem 'grape'
 
 group :development, :test do
   gem 'pry-byebug'

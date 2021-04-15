@@ -37,7 +37,15 @@ Rails.application.routes.draw do
 
   get '/components', to: 'pages#components'
 
-
-  mount API::Base, at: "/"
-
+  namespace :api do
+    namespace :v1 do
+      resources :teachers
+      resources :courses
+      resources :summaries
+      resources :students
+      resources :words
+      resources :mistakes
+    end
+  end
+  
 end

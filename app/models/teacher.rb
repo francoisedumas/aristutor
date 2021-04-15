@@ -1,6 +1,9 @@
 class Teacher < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+
+  # attr_accessor :id, :first_name, :last_name, :about
+
   has_many :teacher_languages
   has_many :courses
   has_many :students, through: :courses
